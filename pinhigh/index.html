@@ -1,0 +1,343 @@
+<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#7610db"><title>PINHIGH 운영진 관리</title><style>
+:root{--p:#7b18e5;--pink:#f51398;--orange:#ff8b28;--bg:#f7f6fb;--ink:#19162a;--muted:#78758a;--line:#ebe8f2;--card:#fff}*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,'Noto Sans KR','Apple SD Gothic Neo',sans-serif;background:var(--bg);color:var(--ink)}button,input,textarea,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.35;cursor:not-allowed}.wrap{max-width:1050px;margin:auto;min-height:100vh;padding:0 16px 100px}.hero{margin:0 -16px 20px;background:linear-gradient(125deg,#8614e9 0%,#e912aa 64%,#ff8a31 100%);color:white;padding:24px 20px 23px;border-radius:0 0 27px 27px;display:flex;gap:20px;align-items:center;justify-content:space-between}.hero img{width:90px;height:90px;object-fit:cover;border-radius:22px;box-shadow:0 5px 20px #31004b44}.hero h1{font-size:24px;letter-spacing:-.8px;margin:0 0 6px}.hero p{margin:0;opacity:.95;font-size:13px}.eyebrow{font-size:11px;font-weight:750;letter-spacing:1px;opacity:.78;margin:0 0 5px}.section{display:none}.section.active{display:block}.title{font-size:19px;font-weight:800;letter-spacing:-.5px;margin:20px 0 12px}.sub{color:var(--muted);font-size:12px;line-height:1.6;margin:4px 0 13px}.card{background:white;border-radius:18px;padding:17px;box-shadow:0 3px 20px #271c490b;margin-bottom:13px;border:1px solid #eeeaf5}.metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.metric{background:white;border-radius:17px;padding:17px 14px;border:1px solid var(--line)}.metric .lbl{font-size:12px;color:#77718d}.metric .num{font-weight:850;font-size:24px;margin:8px 0 3px;white-space:nowrap}.metric small{font-size:11px;color:var(--muted)}.gradient{background:linear-gradient(105deg,#7d13e8,#ee0fa0 67%,#ff8b27);color:white;border:0;border-radius:12px;padding:13px 18px;font-weight:800}.btn{border:1px solid #ded9e9;background:white;color:#3f365d;border-radius:12px;padding:11px 13px;font-weight:650}.btn.sm{padding:8px 10px;font-size:12px}.actions{display:flex;flex-wrap:wrap;gap:8px}.field{display:flex;flex-direction:column;gap:6px;margin-bottom:12px;min-width:0}.field label{font-size:12px;color:#5e596a;font-weight:750}.field input,.field select,.field textarea,.input{border:1px solid #ded9e9;border-radius:11px;padding:12px;background:#fff;width:100%;min-width:0;outline-color:#aa66ed}.field textarea{resize:vertical;min-height:140px;line-height:1.6}.cols{display:grid;grid-template-columns:1fr 1fr;gap:10px}.row{display:flex;justify-content:space-between;align-items:center;gap:10px}.stack{display:grid;gap:9px}.item{padding:12px;border:1px solid var(--line);border-radius:13px;background:#fff}.item strong{font-size:14px}.muted{color:var(--muted);font-size:12px}.tag{font-size:11px;padding:4px 8px;border-radius:20px;background:#f1e6ff;color:#8018d8;font-weight:750;white-space:nowrap}.tag.pink{background:#ffe5f5;color:#d91881}.tag.green{background:#e2faee;color:#0a9a5e}.tag.gray{background:#f1f0f4;color:#6c6876}.tabbar{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:8px 4px max(9px,env(safe-area-inset-bottom));z-index:10;box-shadow:0 -2px 14px #190d300c}.tabbar button{border:0;background:transparent;color:#777187;display:grid;gap:3px;place-items:center;font-size:10px;min-width:56px;padding:5px}.tabbar button span{font-size:21px}.tabbar button.active{color:var(--p);font-weight:800}.rowfill{flex:1}.listrow{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #f0edf5}.listrow:last-child{border:0}.check{width:20px;height:20px;accent-color:#8612dc;flex-shrink:0}.pillradio{display:flex;gap:8px}.pillradio button{flex:1;background:white;border:1px solid #e7dff1;padding:11px 7px;border-radius:12px;font-weight:700;font-size:12px}.pillradio button.active{border:2px solid var(--p);color:var(--p);background:#faf3ff}.mini{width:60px;padding:7px 6px!important}.amount{font-size:25px;font-weight:850;color:#6214a9;letter-spacing:-.5px}.warn{background:#fff6e3;border:1px solid #f5d49b;border-radius:12px;padding:11px;color:#865916;font-size:12px;line-height:1.5}.ok{background:#ebfff5;border:1px solid #b7e9cf;border-radius:12px;padding:11px;color:#17774b;font-size:12px}.desktop{display:none}.divider{border:0;border-top:1px solid var(--line);margin:17px 0}input[type=checkbox]{accent-color:#8415dd} .scroll{overflow-x:auto}.roomgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}.room{background:#faf8ff;border:1px solid #e8dcfa;border-radius:14px;padding:12px}.room h3{margin:0 0 7px;font-size:15px}.room p{margin:5px 0;font-size:13px}.hide{display:none!important}.msg{white-space:pre-line}.hint{font-size:11px;color:#827c90}@media(min-width:800px){.wrap{padding-bottom:40px}.tabbar{position:sticky;top:0;bottom:auto;max-width:1050px;margin:auto;border:0;border-radius:16px;box-shadow:0 4px 20px #22103315}.tabbar button{font-size:13px;display:flex;gap:10px}.tabbar button span{font-size:19px}.hero{margin-top:14px;border-radius:24px}.desktop{display:block}.metrics{grid-template-columns:repeat(4,1fr)}.two{display:grid;grid-template-columns:1.15fr 1fr;gap:14px}.two>.card{margin-bottom:0}}
+
+/* Admin login and export controls */
+#loginScreen{position:fixed;inset:0;background:#f7f6fb;z-index:100;display:flex;align-items:center;justify-content:center;padding:18px;overflow:auto}
+#loginScreen.hidden{display:none}.loginbox{max-width:420px;width:100%;background:white;border:1px solid #e7ddf0;box-shadow:0 10px 50px #4b11601e;border-radius:24px;overflow:hidden}.loginbrand{background:linear-gradient(125deg,#8614e9,#e912aa 66%,#ff8a31);color:white;text-align:center;padding:20px}.loginbrand img{height:85px;width:85px;border-radius:15px;object-fit:cover}.logincontent{padding:20px}.notice{font-size:12px;line-height:1.6;color:#705d38;background:#fff4da;border-radius:12px;padding:12px;margin:12px 0}
+#accountBar{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 3px;margin:0 0 12px;font-size:12px}.posterCard{border-radius:15px;padding:14px;background:#f7edff}.posterPreview{width:100%;max-height:520px;object-fit:contain;border-radius:12px;background:#eadffa}.widebtn{width:100%}
+</style></head><body>
+<div id="loginScreen"><div class="loginbox"><div class="loginbrand"><h2>TEAM PINHIGH</h2><div>운영진 전용 로그인</div></div><div class="logincontent"><div class="field"><label>이메일 아이디</label><input type="email" id="loginEmail" autocomplete="username" placeholder="운영진 이메일"></div><div class="field"><label>비밀번호</label><input type="password" id="loginPassword" autocomplete="current-password" placeholder="비밀번호"></div><button class="gradient widebtn" onclick="signIn()">로그인</button><div class="notice" id="loginHelp">서버 연결 전에는 실제 계정 로그인이 활성화되지 않습니다. 아래의 체험하기로 기능을 시험할 수 있습니다.</div><button class="btn widebtn" onclick="demoSignIn()">로그인 없이 체험하기 (이 기기에만 저장)</button></div></div></div>
+<main class="wrap"><div id="accountBar"><span id="accountLabel">체험 모드</span><button class="btn sm" onclick="signOut()">로그아웃</button></div><header class="hero"><div><div class="eyebrow">TEAM PINHIGH · ADMIN v9.1</div><h1>핀하이 운영관리</h1><p>좋은 사람, 좋은 샷, 좋은 하루 ⛳</p><p style="font-size:11px;margin-top:11px">모바일 최적화 · 운영진 전용</p></div></header>
+<nav class="tabbar" id="nav"><button data-tab="home" class="active"><span>⌂</span>홈</button><button data-tab="members"><span>♙</span>회원</button><button data-tab="meetings"><span>▦</span>정모</button><button data-tab="fund"><span>◉</span>기금</button></nav>
+<section class="section active" id="home"><div class="title">운영진 대시보드</div><div class="metrics"><div class="metric"><div class="lbl">전체 회원</div><div class="num" id="stMembers">0명</div><small>등록 회원</small></div><div class="metric"><div class="lbl">최근 정모 신청</div><div class="num" id="stApplied">0명</div><small id="stDate">정모 없음</small></div><div class="metric"><div class="lbl">출석 회원</div><div class="num" id="stPresent">0명</div><small>최근 정모 기준</small></div><div class="metric"><div class="lbl">홀인원 기금</div><div class="num" style="font-size:19px" id="stBalance">0원</div><small>확인된 납부 기준</small></div></div><div class="title">빠른 실행</div><div class="card actions"><button class="gradient" onclick="go('meetings')">＋ 정모 만들기</button><button class="btn" onclick="go('rooms')">⚑ 방 배정</button><button class="btn" onclick="go('members')">회원 등록</button></div><div class="card"><strong>운영 방식</strong><p class="sub">당근 명단을 텍스트로 붙여넣고, 입금을 확인한 다음 정모 당일 출석을 체크하세요. 방 배정은 출석한 회원만 대상으로 합니다. 기금 수납/지급은 현재 거래 중복 방지를 준비 중입니다.</p><div class="warn">회원은 서버에 저장되며 정모·기금은 이 기기에 저장됩니다. 운영진 5명이 동시에 사용하는 로그인·공유 기능은 서버 동기화는 아직 비활성화되어 있습니다. 실제 계정 로그인 후에도 이 화면의 편집 데이터는 이 기기에만 저장됩니다.</div></div></section>
+<section class="section" id="members"><div class="title">회원관리</div><div class="card"><div class="row"><strong>📋 당근 회원 간편 등록</strong><span class="tag">신규 기능</span></div><p class="sub">당근 프로필에서 복사한 닉네임 또는 여러 회원의 정보를 한 줄씩 붙여넣으세요. 화면을 캡처한 경우 닉네임 한 줄만 입력해도 됩니다. 등록 전 분석 결과를 확인합니다.</p><div class="field"><label>회원 정보 붙여넣기</label><textarea id="bulkMemberText" rows="5" placeholder="별가루🌟 (W81.잠실.G10)&#10;금광동곧미남 (M81 성남 G-1)&#10;아랑파파/M76/성남/G-2"></textarea></div><div class="actions"><button class="gradient" onclick="previewBulkMembers()">명단 분석하기</button><button class="btn" onclick="document.getElementById('bulkMemberText').value='';document.getElementById('bulkMemberPreview').innerHTML=''">지우기</button></div><div id="bulkMemberPreview" style="margin-top:12px"></div></div><div class="card"><div class="row"><strong id="memberFormTitle">회원 등록</strong><button class="btn sm" onclick="clearMemberForm()">초기화</button></div><br><div class="cols"><div class="field"><label>닉네임 *</label><input id="mNick" placeholder="당근 닉네임"></div><div class="field"><label>실명</label><input id="mReal" placeholder="실명"></div><div class="field"><label>핸디</label><input type="number" step="0.1" id="mHandy" placeholder="예: 7"></div><div class="field"><label>G핸디</label><input type="number" step="0.1" id="mG" placeholder="예: -1"></div><div class="field"><label>타석 방향</label><select id="mLeft"><option value="false">우타</option><option value="true">좌타</option></select></div><div class="field"><label>출생연도 (2자리)</label><input id="mBirth" inputmode="numeric" placeholder="예: 81"></div><div class="field"><label>지역</label><input id="mRegion" placeholder="예: 잠실"></div><div class="field"><label>회원 상태</label><select id="mStatus"><option>활동</option><option>휴면</option><option>탈퇴</option></select></div></div><div class="field"><label>당근 가입일 (참고)</label><input id="mJoined" placeholder="예: 2025-11-18"></div><div class="field"><label>당근 일정 참여 수 (참고)</label><input id="mDanggeun" type="number" min="0" placeholder="예: 72"></div><div class="field"><label>비고</label><input id="mMemo" placeholder="운영진 메모"></div><button class="gradient" style="width:100%" onclick="saveMember()">회원 저장</button></div><div class="card"><div class="row"><strong>회원 목록 <span id="memberCount" class="tag">0명</span></strong><button class="btn sm" onclick="exportData()">백업</button></div><br><div class="field"><input id="memberSearch" placeholder="닉네임·실명 검색" oninput="renderMembers()"></div><div id="memberList" class="stack"></div></div></section>
+<section class="section" id="meetings"><div class="title">정모관리</div>
+<div class="card" id="meetingModeChooser"><strong>무엇을 할까요?</strong><p class="sub">새 정모를 만들거나 등록된 정모를 선택해 관리할 수 있어요.</p><div class="stack"><button class="gradient" style="width:100%;text-align:left;padding:18px" onclick="setMeetingView('create')">＋ 새 정모 만들기</button><button class="btn" style="width:100%;text-align:left;padding:18px" onclick="setMeetingView('manage')">▦ 등록된 정모 관리</button></div></div>
+<div id="meetingCreateView" class="hide"><button class="btn sm" onclick="setMeetingView('choose')">← 정모관리 처음으로</button><div class="card" style="margin-top:12px"><strong>정모 만들기</strong><p class="sub">정모 제목·날짜를 입력하고, 당근에서 복사한 신청자 목록을 한 번에 붙여넣어 주세요.</p><div class="field"><label>정모명</label><input id="mtTitle" placeholder="예: 10월 28일 수요 정모"></div><div class="cols"><div class="field"><label>날짜</label><input id="mtDate" type="date"></div><div class="field"><label>시작 시간</label><input id="mtTime" type="time" value="20:00"></div></div><div class="field"><label>장소 (기존 장소 재선택 가능)</label><input id="mtVenue" list="knownVenues" placeholder="장소를 입력하거나 선택하세요" value="골프존파크 위례중앙광장점"><datalist id="knownVenues"></datalist></div><div class="field"><label>기존 회원 목록에서 선택</label><input class="input" id="createMemberSearch" placeholder="닉네임·실명으로 검색" oninput="renderCreateMemberPicker()"><div id="createMemberPicker" class="stack" style="margin-top:8px;max-height:220px;overflow:auto"></div><span class="hint" id="createMemberCount">선택 0명</span></div><p class="sub">회원 목록 선택과 아래 텍스트 입력을 함께 사용할 수 있어요. 중복 회원은 한 번만 등록해요.</p><div class="field"><label>참석 신청자 텍스트 (줄마다 1명)</label><textarea id="mtText" placeholder="금광동곧미남/M81/성남/G-1&#10;아랑파파/M76/성남/G-2&#10;단이/W79/위례/G9"></textarea></div><div class="actions"><button class="btn" onclick="parsePreview()">명단 분석 미리보기</button><button class="gradient" onclick="saveMeeting()">정모·신청자 저장</button></div><div id="previewArea" style="margin-top:12px"></div></div></div><div id="meetingManageView" class="hide"><button class="btn sm" onclick="setMeetingView('choose')">← 정모관리 처음으로</button><div class="card" style="margin-top:12px"><div class="row"><strong>등록된 정모 관리</strong><span class="muted">정모 선택 후 출석·수납 처리</span></div><div class="field" style="margin-top:12px"><select id="meetingSelect" onchange="selectMeeting(this.value)"></select></div><div id="meetingDetail"></div>
+<div id="meetingAddTools" class="card" style="margin-top:16px;background:#fcfaff"><div class="row"><strong>참석자 추가</strong><button class="btn sm" onclick="toggleAddTools()" id="toggleAddBtn">＋ 회원 추가</button></div><div id="addToolsBody" class="hide" style="padding-top:12px"><div class="field"><label>기존 회원 선택 (복수 선택 가능)</label><select id="memberPicker" multiple size="5" class="input" style="height:145px"></select></div><button class="btn" onclick="addSelectedMembers()">선택한 회원 추가</button><hr class="divider"><div class="field"><label>명단 텍스트 추가</label><textarea id="additionalAttendees" placeholder="닉네임 한 줄에 한 명"></textarea></div><div class="actions"><button class="btn" onclick="previewAdditionalAttendees()">추가 명단 확인</button><button class="gradient" onclick="appendAttendees()">텍스트 명단 추가</button></div><div id="additionalPreview" style="margin-top:12px"></div></div></div><div class="actions" style="margin-top:14px;justify-content:flex-end"><button id="completeMeetingBtn" class="gradient" onclick="completeSelectedMeeting()">정모 완료</button><button id="deleteMeetingBtn" class="btn" style="color:#c52b55;border-color:#efb8c9" onclick="deleteSelectedMeeting()">선택한 정모 삭제 (최고관리자)</button></div><p class="hint">정모 삭제 시 연결된 참석·방 배정 기록도 삭제될 수 있습니다. 납부나 거래 기록이 있는 정모는 삭제하지 않습니다.</p></div>
+<div id="rooms" class="meetingRooms"><div class="title">방 배정</div><div class="card"><p class="sub">위의 등록된 정모 목록에서 선택한 정모를 기준으로 배정합니다.</p><div class="item" id="activeRoomMeeting" style="margin-bottom:12px"></div><select id="roomsMeeting" class="hide" aria-hidden="true"></select><strong>방번호 미리 등록</strong><p class="sub">방번호는 원하는 이름으로 설정하고, 좌타 가능한 방에 체크하세요. 방당 2~3명을 배정합니다.</p><div id="roomInputs" class="stack"></div><div class="actions" style="margin-top:10px"><button class="btn" onclick="addRoom()">＋ 방 추가 (최대 5)</button><button class="btn" onclick="saveRooms()">방 구성 저장</button></div><hr class="divider"><strong>배정 방식</strong><div class="pillradio" style="margin:12px 0"><button id="randomBtn" class="active" onclick="setMode('random')">🔀 완전 랜덤</button><button id="balancedBtn" onclick="setMode('balanced')">⚖️ 핸디 균형</button></div><div class="field"><label>균형 계산 기준</label><select id="balanceKey"><option value="handy">일반 핸디</option><option value="g">G핸디</option></select></div><label class="muted"><input id="avoidRepeat" type="checkbox" checked> 이전 동반자 중복 최소화</label><div style="height:12px"></div><button class="gradient" style="width:100%" onclick="assignRooms()">방 자동 배정하기</button><div id="assignNote" style="margin-top:12px"></div></div><div class="card"><strong>방별 배정 결과</strong><p class="sub">수동 변경은 회원 이름 옆의 선택 메뉴에서 가능합니다.</p><div id="roomResult" class="roomgrid"></div><button class="gradient widebtn" style="margin-top:14px" onclick="makePoster()">공지 이미지 생성하기</button><div id="posterOutput" style="margin-top:12px"></div></div>
+</div></section>
+<section class="section" id="fund"><div class="title">홀인원 기금</div><div class="card"><div class="muted">현재 기금 잔액</div><div class="amount" id="fundBalance">0원</div><p class="sub">확인된 납부금 + 초기 잔액 − 지급금 기준. 결석해도 이미 받은 기금은 유지됩니다.</p><div class="cols"><div class="metric"><div class="lbl">총 납부</div><div id="fundPaid" style="font-size:18px;font-weight:800;margin-top:9px">0원</div></div><div class="metric"><div class="lbl">홀인원 시 지급 (50%)</div><div id="fundHalf" style="font-size:18px;font-weight:800;margin-top:9px">0원</div></div></div></div><div class="card"><strong>초기 이월 기금</strong><p class="sub">기존에 모아 둔 기금을 한 번만 입력하세요.</p><div class="field"><input type="number" id="fundOpening" min="0" step="1000" placeholder="초기 잔액"></div><button class="btn" onclick="saveOpening()">초기 잔액 저장</button><hr class="divider"><strong>홀인원 지급 등록</strong><p class="sub">지급 시점의 기금 잔액 50%를 계산해 저장합니다.</p><div class="field"><label>홀인원 회원 닉네임</label><input id="winner" placeholder="닉네임"></div><div class="field"><label>발생일</label><input id="winDate" type="date"></div><button class="gradient" onclick="payHoleInOne()">50% 지급 기록</button></div><div class="card"><div class="row"><strong>기금현황 공지 이미지</strong><span class="tag pink">9:16 세로 이미지</span></div><p class="sub">현재 저장된 수납·지급 기록을 이용해 이미지로 만듭니다. 카카오톡에 공유하거나 PNG로 보관할 수 있습니다.</p><div class="field"><label>공지 제목</label><input id="fundPosterTitle" value="PINHIGH 홀인원 기금 현황" maxlength="40"></div><button class="gradient widebtn" onclick="makeFundPoster()">기금현황 이미지 만들기</button><div id="fundPosterOutput" style="margin-top:12px"></div></div><div class="card"><strong>기금 거래 내역</strong><div id="fundHistory" class="stack" style="margin-top:12px"></div></div></section></main>
+<script src="config.js"></script>
+<script>window.addEventListener("error", function(event){const h=document.getElementById("loginHelp");if(h)h.textContent="페이지 실행 오류: "+(event.message||"알 수 없는 오류")+". 새로고침 후에도 계속되면 화면을 보내 주세요.";});</script>
+<script>
+let cloudClient=null,cloudUser=null,cloudAdmin=null,loginBusy=false;
+let cloudFundRows=[];
+const KEY='pinhigh-admin-prototype-v1';const uid=()=>Math.random().toString(36).slice(2,10);let data;try{data=JSON.parse(localStorage.getItem(KEY))}catch{}data=data||{members:[],meetings:[],opening:0,payouts:[]};let currentId=null,editMember=null,mode='random',draftRooms=[];const $=id=>document.getElementById(id),save=()=>{localStorage.setItem(KEY,JSON.stringify(data));renderAll();syncCloud()},won=n=>Math.round(n||0).toLocaleString('ko-KR')+'원',esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const selected=()=>data.meetings.find(x=>x.id===currentId);function go(t){if(t==='rooms')t='meetings';if(t==='meetings')setMeetingView('choose');document.querySelectorAll('.section').forEach(e=>e.classList.toggle('active',e.id===t));document.querySelectorAll('#nav button').forEach(e=>e.classList.toggle('active',e.dataset.tab===t));scrollTo(0,0);renderAll()};document.querySelectorAll('#nav button').forEach(e=>e.onclick=()=>go(e.dataset.tab));
+function clearMemberForm(){editMember=null;['mNick','mReal','mHandy','mG','mMemo','mBirth','mRegion','mJoined','mDanggeun'].forEach(i=>$(i).value='');$('mLeft').value='false';$('mStatus').value='활동';$('memberFormTitle').textContent='회원 등록'}async function saveMember(){
+ let nick=$('mNick').value.trim();if(!nick)return alert('닉네임을 입력해 주세요.');
+ if(data.members.some(m=>m.nick===nick&&m.id!==editMember))return alert('이미 존재하는 닉네임입니다.');
+ let old=data.members.find(m=>m.id===editMember),handy=$('mHandy').value===''?null:Number($('mHandy').value),g=$('mG').value===''?null:Number($('mG').value);
+ let m={...(old||{id:uid(),history:[]}),nick,real:$('mReal').value.trim(),handy,g,left:$('mLeft').value==='true',status:$('mStatus').value,memo:$('mMemo').value.trim(),birth:$('mBirth').value.trim(),region:$('mRegion').value.trim(),joined:$('mJoined').value.trim(),danggeunCount:$('mDanggeun').value===''?null:Number($('mDanggeun').value)};
+ if(cloudUser){try{await persistMember(m,old);clearMemberForm();alert('서버 회원정보 저장 완료');}catch(e){alert('서버 저장 실패: '+e.message)}return}
+ if(old&&(old.handy!==handy||old.g!==g))m.history=[...(old.history||[]),{at:new Date().toISOString(),fromHandy:old.handy,fromG:old.g,toHandy:handy,toG:g}];
+ if(old)Object.assign(old,m);else data.members.push(m);clearMemberForm();save();alert('체험용 회원이 이 브라우저에 저장됐습니다.');
+}
+function editM(id){let m=data.members.find(x=>x.id===id);if(!m)return;editMember=id;$('mNick').value=m.nick;$('mReal').value=m.real||'';$('mHandy').value=m.handy??'';$('mG').value=m.g??'';$('mLeft').value=String(m.left);$('mStatus').value=m.status;$('mMemo').value=m.memo||'';$('mBirth').value=m.birth||'';$('mRegion').value=m.region||'';$('mJoined').value=m.joined||'';$('mDanggeun').value=m.danggeunCount??'';$('memberFormTitle').textContent='회원 수정';go('members');scrollTo(0,0)}function renderMembers(){let q=$('memberSearch').value.toLowerCase(),rows=data.members.filter(m=>(m.nick+' '+m.real).toLowerCase().includes(q));$('memberCount').textContent=data.members.length+'명';$('memberList').innerHTML=rows.map(m=>`<div class="item"><div class="row"><strong>${esc(m.nick)} ${m.left?'<span class="tag pink">좌타</span>':''}</strong><button class="btn sm" onclick="editM('${m.id}')">수정</button>${cloudUser?`<button class="btn sm" onclick="loadMemberHistory('${m.id}').catch(e=>alert(e.message))">이력</button>`:''}</div><div class="muted" style="margin-top:7px">${esc(m.real||'실명 미입력')} · 핸디 ${m.handy??'-'} · G핸디 ${m.g??'-'} · ${esc(m.status)}${m.region?' · '+esc(m.region):''}${m.birth?' · '+esc(m.birth)+'년생':''}</div>${m.danggeunCount!=null?`<div class="muted" style="margin-top:4px">당근 일정 참여 ${m.danggeunCount}회 (참고용)</div>`:''}${m.history.length?`<details style="font-size:12px;margin-top:8px"><summary>핸디 변경 이력 ${m.history.length}건</summary>${m.history.map(h=>`<p>${new Date(h.at).toLocaleDateString('ko-KR')} : ${h.fromHandy??'-'} → ${h.toHandy??'-'} / G ${h.fromG??'-'} → ${h.toG??'-'}</p>`).join('')}</details>`:''}</div>`).join('')||'<p class="sub">등록된 회원이 없습니다.</p>'}
+let bulkCandidates=[];
+function readMemberLine(line){
+ let raw=line.trim().replace(/^\s*(?:\d+[.)]|[-•])\s*/, '').replace(/\s+(?:본인인증 완료|최근 방문.*|첫 참여.*)$/,'').trim();
+ if(!raw||/^(참여 중|대기 중|활동 요약|참여한 일정|최근 가입일|모임 방문|게시글|댓글|일정 참여|출석 완료|불참|전체보기|회원 관리)/.test(raw))return null;
+ let nick=raw.split(/[(/（]/)[0].trim();
+ // If no separators, accept nickname-only; never interpret numeric stats as a nickname.
+ if(!nick||/^\d+[\d,.\s]*$/.test(nick)||nick.length>40)return null;
+ let tail=raw.slice(nick.length);let birth=(tail.match(/(?:^|[^a-zA-Z])(?:[MWmw])\s*[/ .-]?\s*(\d{2})(?!\d)/)||[])[1]||'';
+ let g=(tail.match(/(?:^|[\s/.（(])G\s*[-+]?\s*\d+(?:\.\d+)?/i)||[])[0];
+ let gv=g?g.match(/G\s*([-+]?\s*\d+(?:\.\d+)?)/i):null;
+ let gNum=gv?Number(gv[1].replace(/\s/g,'')):null;
+ let region='';for(const r of ['잠실','성남','위례','송파','분당','하남','강남','수원','광주','판교','용인','서울','금광동','창곡동','삼전동'])if(tail.includes(r)){region=r;break}
+ return {nick,birth,region,g:gNum,raw};
+}
+function previewBulkMembers(){let input=$('bulkMemberText').value;bulkCandidates=input.split(/\n/).map(readMemberLine).filter(Boolean);let known=new Set(data.members.map(m=>m.nick));let dup=new Set();let html='<div class="sub">분석 '+bulkCandidates.length+'명 · 등록 전 확인해 주세요. 출생연도·G핸디는 닉네임 표기에서 추정한 값입니다.</div>';
+ if(!bulkCandidates.length){$('bulkMemberPreview').innerHTML='<div class="warn">닉네임을 한 줄에 한 명씩 넣어 주세요.</div>';return}
+ html+=bulkCandidates.map((m,i)=>{let repeat=dup.has(m.nick);dup.add(m.nick);let status=repeat?'중복 행':known.has(m.nick)?'기존 회원':'신규 회원';return `<div class="item"><div class="row"><strong>${esc(m.nick)}</strong><span class="tag ${repeat?'pink':'gray'}">${status}</span></div><div class="muted">출생 ${esc(m.birth||'미상')} · 지역 ${esc(m.region||'미상')} · G핸디 ${m.g??'미상'}</div><label class="muted"><input type="checkbox" class="bulkpick" data-i="${i}" ${repeat||known.has(m.nick)?'':'checked'}> 등록 대상</label></div>`}).join('');
+ html+='<button class="gradient" style="width:100%;margin-top:10px" onclick="saveBulkMembers()">선택 회원 일괄 등록</button><p class="sub">기존 회원은 자동 덮어쓰기하지 않습니다. 변경할 정보는 회원 수정에서 확인하세요.</p>';$('bulkMemberPreview').innerHTML=html;
+}
+async function saveBulkMembers(){
+ let indexes=[...document.querySelectorAll('.bulkpick:checked')].map(x=>Number(x.dataset.i));if(!indexes.length)return alert('등록할 회원을 선택해 주세요.');
+ let added=0,skipped=0,errors=[];
+ for(let i of indexes){let c=bulkCandidates[i];if(!c||data.members.some(m=>m.nick===c.nick)){skipped++;continue}
+ let m={id:uid(),nick:c.nick,real:'',handy:null,g:c.g,left:false,status:'활동',memo:'당근 일괄 등록 · G핸디/좌타 확인 필요',birth:c.birth,region:c.region,joined:'',danggeunCount:null,history:[]};
+ if(cloudUser){try{await persistMember(m,null);added++}catch(e){errors.push(c.nick+': '+e.message)}}else{data.members.push(m);added++}
+ }
+ if(!cloudUser)save();else await loadServerMembers();previewBulkMembers();alert(`신규 ${added}명 등록, 중복 ${skipped}명, 오류 ${errors.length}명`+(errors.length?'\n'+errors.slice(0,3).join('\n'):''));
+}
+let meetingView='choose';let createMemberSelection=new Set();
+function setMeetingView(view){meetingView=view;document.getElementById('meetingModeChooser').classList.toggle('hide',view!=='choose');document.getElementById('meetingCreateView').classList.toggle('hide',view!=='create');document.getElementById('meetingManageView').classList.toggle('hide',view!=='manage');if(view==='create')renderCreateMemberPicker();if(view==='manage')renderMeeting();}
+function selectedCreateMemberIds(){return [...createMemberSelection]}
+function createNames(){const byId=selectedCreateMemberIds().map(id=>data.members.find(m=>m.id===id)?.nick).filter(Boolean);return [...new Set([...byId,...namesFromText($('mtText').value)])]}
+function renderCreateMemberPicker(){let box=$('createMemberPicker');if(!box)return;const selected=createMemberSelection,query=($('createMemberSearch')?.value||'').toLowerCase();const list=data.members.filter(m=>m.status!=='탈퇴'&&((m.nick||'')+' '+(m.real||'')).toLowerCase().includes(query));box.innerHTML=list.length?list.map(m=>`<label class="item" style="display:flex;align-items:center;gap:8px;margin:0"><input type="checkbox" class="create-member-check" value="${esc(m.id)}" ${selected.has(m.id)?'checked':''} onchange="setCreateMemberSelected(this.value,this.checked)"><span><strong>${esc(m.nick)}</strong><span class="muted"> ${esc(m.real||'')}</span></span></label>`).join(''):'<p class="sub">조건에 맞는 회원이 없어요.</p>';updateCreateMemberCount()}
+function setCreateMemberSelected(id,checked){if(checked)createMemberSelection.add(id);else createMemberSelection.delete(id);updateCreateMemberCount()}
+function updateCreateMemberCount(){let e=$('createMemberCount');if(e)e.textContent='선택 '+selectedCreateMemberIds().length+'명'}
+function namesFromText(text){return [...new Set(text.split(/\n/).map(line=>line.trim()).filter(line=>line&&!/^(참석자|참여 중|대기 중|정모명|시간|날짜|장소|방번호|[-=]{2,})/.test(line)).map(line=>line.replace(/^\s*\d+[.)]\s*/,'').split(/[\/（(]/)[0].replace(/\s*\([^)]*\)\s*$/,'').trim()).filter(Boolean))]};function parsePreview(){let names=createNames();$('previewArea').innerHTML=names.length?`<div class="ok">${names.length}명 인식 · 기존 회원 ${names.filter(n=>data.members.some(m=>m.nick===n)).length}명 / 신규 닉네임 ${names.filter(n=>!data.members.some(m=>m.nick===n)).length}명</div><div class="sub">${names.map(esc).join(' · ')}</div>`:'<div class="warn">등록할 닉네임을 한 줄에 한 명씩 입력해 주세요.</div>'}function saveMeeting(){if(cloudUser)return cloudSaveMeeting();let title=$('mtTitle').value.trim(),date=$('mtDate').value,names=createNames();if(!title||!date)return alert('정모명과 날짜를 입력해 주세요.');let added=0;let ids=names.map(n=>{let m=data.members.find(x=>x.nick===n);if(!m){m={id:uid(),nick:n,real:'',handy:null,g:null,left:false,status:'활동',memo:'당근 명단에서 자동 등록 · 좌타 및 핸디 확인 필요',history:[]};data.members.push(m);added++}return{memberId:m.id,paid:false,present:false,handy:m.handy,g:m.g}});let mt={id:uid(),title,date,time:$('mtTime').value,venue:$('mtVenue').value.trim(),status:'planned',attendees:ids,rooms:[],assignment:[]};data.meetings.unshift(mt);currentId=mt.id;$('mtText').value='';$('mtTitle').value='';$('previewArea').innerHTML='';createMemberSelection.clear();setMeetingView('manage');save();alert(`정모가 등록됐습니다.\n참석 신청자 ${ids.length}명 / 신규 회원 ${added}명\n신규 회원의 좌타 여부를 꼭 확인해 주세요.`)}function selectMeeting(id){currentId=id;draftRooms=(selected()?.rooms||[]).map(x=>({...x}));renderAll()}
+
+async function deleteSelectedMeeting(){
+ const mt=selected();if(!mt)return alert('삭제할 정모를 먼저 선택해 주세요.');
+ if(cloudUser&&cloudAdmin?.role!=='super')return alert('정모 삭제는 최고관리자만 할 수 있습니다.');
+ if(mt.attendees.some(a=>a.paid))return alert('납부 처리된 참석자가 있어 삭제할 수 없습니다. 먼저 회계 기록을 확인해 주세요.');
+ if(cloudUser){
+  try{
+   requireCloud();
+   for(const table of ['hole_in_one_transactions','finance_transactions']){
+    const r=await cloudClient.from(table).select('id').eq('meeting_id',mt.id).limit(1);
+    if(r.error)throw r.error;
+    if(r.data?.length)return alert('이 정모에 '+table+' 거래 내역이 있어 삭제할 수 없습니다.');
+   }
+  }catch(e){return alert('거래 내역 조회 실패로 삭제를 중단했습니다: '+e.message)}
+ }
+ if(!confirm('정모 "'+mt.title+'"를 삭제할까요?\n참석 신청·출석·방 배정 기록도 사라질 수 있습니다.'))return;
+ if(!confirm('최종 확인: "'+mt.title+'"를 영구 삭제합니다. 계속할까요?'))return;
+ try{
+  if(cloudUser){
+   const r=await cloudClient.from('meetings').delete().eq('id',mt.id).select('id');
+   if(r.error)throw r.error;
+   if(!r.data?.length)throw Error('삭제 권한이 없거나 이미 삭제된 정모입니다.');
+   await cloudLoadMeetings();
+  }else{
+   data.meetings=data.meetings.filter(m=>m.id!==mt.id);
+   currentId=data.meetings[0]?.id||null;draftRooms=[];save();
+  }
+  alert('정모가 삭제됐습니다.');
+ }catch(e){alert('정모 삭제 실패: '+e.message)}
+}
+
+function completed(mt){return mt?.status==='completed'}
+function canEdit(mt){return !completed(mt)||cloudAdmin?.role==='super'}
+function ensureEditable(){const mt=selected();if(mt&&!canEdit(mt)){alert('완료된 정모는 최고관리자만 수정할 수 있습니다.');return false}return true}
+function toggleAddTools(){if(!ensureEditable())return;const b=$('addToolsBody');b.classList.toggle('hide');$('toggleAddBtn').textContent=b.classList.contains('hide')?'＋ 회원 추가':'접기';populatePicker()}
+function populatePicker(){const mt=selected(),existing=new Set((mt?.attendees||[]).map(a=>a.memberId));$('memberPicker').innerHTML=data.members.filter(m=>!existing.has(m.id)&&m.status!=='탈퇴').map(m=>`<option value="${esc(m.id)}">${esc(m.nick)}${m.real?' · '+esc(m.real):''}</option>`).join('')}
+async function addSelectedMembers(){if(!ensureEditable())return;const ids=[...$('memberPicker').selectedOptions].map(x=>x.value),mt=selected();if(!mt||!ids.length)return alert('추가할 회원을 선택해 주세요.');try{if(cloudUser){requireCloud();const payload=ids.map(member_id=>({meeting_id:mt.id,member_id,application_status:'applied',attendance_status:'pending',payment_status:'unpaid'}));check(await cloudClient.from('meeting_participants').upsert(payload,{onConflict:'meeting_id,member_id',ignoreDuplicates:true}));await cloudLoadMeetings()}else{for(const id of ids){if(!mt.attendees.some(a=>a.memberId===id)){const m=data.members.find(x=>x.id===id);mt.attendees.push({memberId:id,present:false,paid:false,handy:m?.handy??null,g:m?.g??null})}}save()}populatePicker();alert(ids.length+'명 추가했습니다.')}catch(e){alert('추가 실패: '+e.message)}}
+async function completeSelectedMeeting(){const mt=selected();if(!mt)return alert('정모를 선택해 주세요.');if(completed(mt))return alert('이미 완료된 정모입니다.');if(!confirm('정모를 완료할까요? 완료 후 일반 운영진은 수정할 수 없습니다.'))return;try{if(cloudUser){requireCloud();check(await cloudClient.from('meetings').update({status:'completed'}).eq('id',mt.id).select('id'));await cloudLoadMeetings()}else{mt.status='completed';save()}alert('정모 완료 처리했습니다.')}catch(e){alert('완료 처리 실패: '+e.message)}}
+function updateVenueOptions(){const venues=[...new Set(data.meetings.map(x=>x.venue).filter(Boolean))];$('knownVenues').innerHTML=venues.map(x=>`<option value="${esc(x)}"></option>`).join('')}
+function previewAdditionalAttendees(){
+ const mt=selected(),names=namesFromText($('additionalAttendees').value);
+ const existing=new Set((mt?.attendees||[]).map(a=>a.memberId));
+ const dup=names.filter(n=>data.members.some(m=>m.nick===n&&existing.has(m.id)));
+ const missing=names.filter(n=>!data.members.some(m=>m.nick===n));
+ const fresh=names.filter(n=>!dup.includes(n)&&!missing.includes(n));
+ $('additionalPreview').innerHTML=!mt?'<div class="warn">먼저 정모를 선택해 주세요.</div>':
+ `<div class="ok">추가 가능 ${fresh.length}명 · 기존 신청자 ${dup.length}명 · 미등록 회원 ${missing.length}명</div>`+
+ (missing.length?`<div class="warn">먼저 회원관리에서 등록: ${missing.map(esc).join(', ')}</div>`:'')+
+ `<p class="sub">${fresh.map(esc).join(' · ')||'새로운 신청자가 없습니다.'}</p>`;
+}
+async function appendAttendees(){if(!ensureEditable())return;
+ const mt=selected(),names=namesFromText($('additionalAttendees').value);
+ if(!mt)return alert('추가할 정모를 먼저 선택하세요.');
+ if(!names.length)return alert('추가할 신청자 이름을 입력하세요.');
+ const existing=new Set(mt.attendees.map(a=>a.memberId));
+ const missing=names.filter(n=>!data.members.some(m=>m.nick===n));
+ if(missing.length)return alert('회원관리에서 먼저 등록해 주세요: '+missing.join(', '));
+ const add=names.map(n=>data.members.find(m=>m.nick===n)).filter(m=>!existing.has(m.id));
+ if(!add.length)return alert('모두 이미 신청한 회원입니다. 중복 등록하지 않았습니다.');
+ try{
+  if(cloudUser){
+   requireCloud();
+   const payload=add.map(m=>({meeting_id:mt.id,member_id:m.id,application_status:'applied',attendance_status:'pending',payment_status:'unpaid'}));
+   const result=await cloudClient.from('meeting_participants').upsert(payload,{onConflict:'meeting_id,member_id',ignoreDuplicates:true}).select('id');
+   if(result.error)throw result.error;
+   await cloudLoadMeetings();
+  }else{
+   mt.attendees.push(...add.map(m=>({memberId:m.id,paid:false,present:false,handy:m.handy,g:m.g})));
+   save();
+  }
+  $('additionalAttendees').value='';$('additionalPreview').innerHTML='';
+  alert('기존 정모에 새 신청자 '+add.length+'명을 추가했습니다.');
+ }catch(e){alert('신청자 추가 실패: '+e.message);if(cloudUser)await cloudLoadMeetings().catch(()=>{});}
+}
+async function removeMeetingAttendee(mid, memberId){
+ const mt=selected();if(!mt||mt.id!==mid||!ensureEditable())return;
+ const a=mt.attendees.find(x=>x.memberId===memberId),m=data.members.find(x=>x.id===memberId);
+ if(!a)return;
+ if(a.paid)return alert('납부 처리된 회원은 기금 정산 후 별도로 처리해야 합니다. 삭제할 수 없습니다.');
+ if(mt.assignment.some(r=>r.ids.includes(memberId)))return alert('방 배정된 회원은 먼저 배정 결과를 정리한 후 삭제해 주세요.');
+ if(!confirm((m?.nick||'회원')+' 님을 이 정모의 참석자 목록에서 삭제할까요? 회원정보 자체는 유지됩니다.'))return;
+ try{
+  if(cloudUser){requireCloud();const res=await cloudClient.from('meeting_participants').delete().eq('meeting_id',mid).eq('member_id',memberId).select('id');check(res);if(!res.data?.length)throw Error('삭제되지 않았습니다. 권한 또는 완료 상태를 확인하세요.');await cloudLoadMeetings();}
+  else{mt.attendees=mt.attendees.filter(x=>x.memberId!==memberId);save();}
+ }catch(e){alert('참석자 삭제 실패: '+e.message)}
+}
+function renderMeeting(){let deleteButton=$('deleteMeetingBtn');if(deleteButton)deleteButton.style.display=(!cloudUser||cloudAdmin?.role==='super')?'':'none';let mt=selected();updateVenueOptions();let opts=data.meetings.map(m=>`<option value="${m.id}" ${m.id===currentId?'selected':''}>${esc(m.date+' · '+m.title+(completed(m)?' [완료]':''))}</option>`).join('');$('meetingSelect').innerHTML=opts||'<option>정모 없음</option>';$('roomsMeeting').innerHTML=opts||'<option>정모 없음</option>';if($('activeRoomMeeting'))$('activeRoomMeeting').textContent=mt?(mt.date+' · '+mt.title+' · '+(mt.venue||'장소 미등록')):'선택한 정모 없음';if($('completeMeetingBtn'))$('completeMeetingBtn').style.display=mt&&!completed(mt)?'':'none';if($('meetingAddTools'))$('meetingAddTools').style.display=mt&&canEdit(mt)?'':'none';if(!mt){$('meetingDetail').innerHTML='<p class="sub">정모를 먼저 등록해 주세요.</p>';return}$('meetingDetail').innerHTML=`<div class="row"><strong>${esc(mt.title)}</strong><span class="tag">${completed(mt)?'완료 · ':''}신청 ${mt.attendees.length}명</span></div><p class="sub">출석 ${mt.attendees.filter(x=>x.present).length}명 · 납부 ${mt.attendees.filter(x=>x.paid).length}명 · 납부 예상 ${won(mt.attendees.length*2000)}</p>`+mt.attendees.map(a=>{let m=data.members.find(x=>x.id===a.memberId);return`<div class="listrow"><div class="rowfill"><strong>${esc(m?.nick||'탈퇴 회원')}</strong> ${m?.left?'<span class="tag pink">좌타</span>':''}<div class="muted">핸디 ${a.handy??'-'} / G ${a.g??'-'}</div></div><label style="text-align:center;font-size:11px;color:#777">납부<br><input class="check" aria-label="${esc(m?.nick)} 납부" type="checkbox" ${a.paid?'checked':''} ${!canEdit(mt)?'disabled':''} onchange="toggleAttend('${mt.id}','${a.memberId}','paid',this.checked)"></label><label style="text-align:center;font-size:11px;color:#777">출석<br><input class="check" aria-label="${esc(m?.nick)} 출석" type="checkbox" ${a.present?'checked':''} ${!canEdit(mt)?'disabled':''} onchange="toggleAttend('${mt.id}','${a.memberId}','present',this.checked)"></label>${canEdit(mt)?`<button class="btn sm" style="color:#b32853" aria-label="${esc(m?.nick)} 참석 삭제" onclick="removeMeetingAttendee('${mt.id}','${a.memberId}')">삭제</button>`:''}</div>`}).join('')+`<div class="actions" style="margin-top:12px"><button class="btn" ${canEdit(mt)?'':'disabled'} onclick="toggleAddTools()">＋ 참석자 추가</button></div>`};function toggleAttend(mid,id,key,value){if(!ensureEditable())return;if(cloudUser)return cloudToggleAttend(mid,id,key,value);let a=data.meetings.find(x=>x.id===mid)?.attendees.find(x=>x.memberId===id);if(a){a[key]=value;save()}}
+function renderRoomInputs(){let mt=selected();$('rooms').querySelectorAll('button,input,select').forEach(el=>{if(el.id!=='roomsMeeting')el.disabled=!!mt&&!canEdit(mt)});if(!mt){$('roomInputs').innerHTML='<p class="sub">먼저 정모를 선택하세요.</p>';return}if(!draftRooms.length&&mt.rooms.length)draftRooms=mt.rooms.map(r=>({...r}));let rooms=draftRooms;$('roomInputs').innerHTML=rooms.map((r,i)=>`<div class="row"><input class="input" style="flex:1" aria-label="방번호" value="${esc(r.name)}" oninput="draftRooms[${i}].name=this.value"><label style="font-size:12px;white-space:nowrap"><input type="checkbox" ${r.left?'checked':''} onchange="draftRooms[${i}].left=this.checked"> 좌타방</label><button class="btn sm" onclick="draftRooms.splice(${i},1);renderRoomInputs()">×</button></div>`).join('')||'<div class="sub">방을 추가해 주세요.</div>'}function addRoom(){if(!ensureEditable())return;if(!selected())return alert('정모를 먼저 등록해 주세요.');if(draftRooms.length>=5)return alert('방은 최대 5개입니다.');draftRooms.push({id:uid(),name:`${draftRooms.length+1}번방`,left:false});renderRoomInputs()}function saveRooms(){if(!ensureEditable())return;if(cloudUser)return cloudSaveRooms();let mt=selected();if(!mt)return alert('정모를 먼저 선택하세요.');if(!draftRooms.length)return alert('방을 한 개 이상 등록해 주세요.');let names=draftRooms.map(r=>r.name.trim());if(names.some(x=>!x)||new Set(names).size!==names.length)return alert('방번호를 입력하고 중복을 제거해 주세요.');mt.rooms=draftRooms.map(r=>({...r,name:r.name.trim()}));mt.assignment=[];save();alert('방 구성이 저장됐습니다.')}function setMode(v){mode=v;$('randomBtn').classList.toggle('active',v==='random');$('balancedBtn').classList.toggle('active',v==='balanced')}
+function shuffle(arr){let a=[...arr];for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}function assignRooms(){if(!ensureEditable())return;let mt=selected();if(!mt)return alert('정모를 선택해 주세요.');if(!mt.rooms.length)return alert('방 구성을 먼저 저장해 주세요.');let people=mt.attendees.filter(a=>a.present);let rooms=mt.rooms,n=people.length;if(n<rooms.length*2||n>rooms.length*3)return showNote(`출석 ${n}명, ${rooms.length}개 방의 배정 가능 인원은 ${rooms.length*2}~${rooms.length*3}명입니다.`,true);let leftPeople=people.filter(a=>data.members.find(m=>m.id===a.memberId)?.left);let capacity=rooms.filter(r=>r.left).length*3;if(leftPeople.length>capacity)return showNote(`좌타 회원 ${leftPeople.length}명에 비해 좌타방 수용 가능 인원 ${capacity}명이 부족합니다.`,true);if(leftPeople.length&&rooms.every(r=>!r.left))return showNote('좌타 회원이 있지만 좌타방이 없습니다.',true);
+let capacities=rooms.map(()=>2);let spare=n-rooms.length*2;let order=shuffle(rooms.map((_,i)=>i));for(let i=0;i<spare;i++)capacities[order[i]]++;let pastPairs=new Set();for(const oldMeeting of data.meetings){if(oldMeeting.id===mt.id)continue;for(const priorRoom of oldMeeting.assignment||[]){const ids=priorRoom.ids||[];for(let i=0;i<ids.length;i++)for(let j=i+1;j<ids.length;j++)pastPairs.add([ids[i],ids[j]].sort().join('|'));}}let handyKey=$('balanceKey').value,avoid=$('avoidRepeat').checked,solutions=[];for(let trial=0;trial<Math.max(120,mode==='balanced'?600:250);trial++){let bins=rooms.map(()=>[]),seq=shuffle(people).sort((a,b)=>Number(!!data.members.find(m=>m.id===b.memberId)?.left)-Number(!!data.members.find(m=>m.id===a.memberId)?.left));let fail=false;for(let a of seq){let isLeft=data.members.find(m=>m.id===a.memberId)?.left;let choices=rooms.map((r,i)=>i).filter(i=>bins[i].length<capacities[i]&&(!isLeft||rooms[i].left));if(!choices.length){fail=true;break}let i=choices[Math.floor(Math.random()*choices.length)];bins[i].push(a)}if(fail)continue;let score=0;for(const bin of bins){for(let i=0;i<bin.length;i++){for(let j=i+1;j<bin.length;j++){const pair=[bin[i].memberId,bin[j].memberId].sort().join('|');if(avoid&&pastPairs.has(pair))score+=120;}}}if(mode==='balanced'){let avgs=bins.map(bin=>{let vals=bin.map(x=>x[handyKey]).filter(x=>x!==null&&Number.isFinite(x));return vals.length?vals.reduce((a,b)=>a+b,0)/vals.length:null});let good=avgs.filter(x=>x!==null);if(good.length>1){let avg=good.reduce((a,b)=>a+b,0)/good.length;score+=good.reduce((s,x)=>s+Math.pow(x-avg,2),0)*3}}solutions.push({bins,score})}if(!solutions.length)return showNote('현재 좌타방/인원 구성으로 배정할 수 없습니다. 좌타방 수 또는 방 개수를 조정해 주세요.',true);solutions.sort((a,b)=>a.score-b.score);let best=solutions[0];mt.assignment=best.bins.map((bin,i)=>({roomId:rooms[i].id,ids:bin.map(a=>a.memberId)}));mt.mode=mode;if(cloudUser){cloudPersistAssignment(mt).catch(e=>{showNote('방 배정 서버 저장 실패: '+e.message,true);cloudLoadMeetings()});}else save();showNote('자동 배정 완료! 각 방에 2~3명이 배정됐습니다. 이전 동반자는 가능한 범위에서 분리했습니다.',false)}function showNote(s,warning){$('assignNote').innerHTML=`<div class="${warning?'warn':'ok'}">${esc(s)}</div>`}function movePerson(mid,from,to){if(!ensureEditable())return;if(cloudUser)return alert("서버 연동 모드에서는 수동 이동이 아직 제한돼 있습니다. 다시 자동 배정해 주세요.");let mt=selected(),a=mt?.assignment.find(r=>r.roomId===from),b=mt?.assignment.find(r=>r.roomId===to);if(!a||!b||a===b)return;let member=data.members.find(m=>m.id===mid),room=mt.rooms.find(r=>r.id===to);if(member?.left&&!room.left)return alert('좌타 회원은 좌타 가능한 방에만 배정할 수 있습니다.');if(b.ids.length>=3)return alert('방당 최대 3명입니다.');if(a.ids.length<=2)return alert('방당 최소 2명을 유지해야 합니다. 직접 이동하려면 방 구성을 다시 조정해 주세요.');a.ids=a.ids.filter(x=>x!==mid);b.ids.push(mid);save()}
+function renderRoomResult(){let mt=selected();$('roomResult').innerHTML=mt?.assignment?.length?mt.assignment.map(r=>{let room=mt.rooms.find(x=>x.id===r.roomId);return`<div class="room"><div class="row"><h3>${esc(room?.name||'?')}</h3><span class="tag ${room?.left?'pink':'gray'}">${room?.left?'좌타 가능':'일반방'}</span></div>${r.ids.map(id=>{let m=data.members.find(x=>x.id===id);return`<div class="row" style="padding:8px 0;gap:5px"><span style="font-size:13px">${esc(m?.nick||'?')} ${m?.left?'↶':''}</span><select style="max-width:100px;border:1px solid #ddd;border-radius:8px;padding:4px;font-size:11px" aria-label="방 이동" onchange="movePerson('${id}','${r.roomId}',this.value)"><option value="${r.roomId}">방 이동</option>${mt.rooms.filter(x=>x.id!==r.roomId).map(x=>`<option value="${x.id}">${esc(x.name)}</option>`).join('')}</select></div>`}).join('')}</div>`}).join(''):'<p class="sub">배정된 결과가 없습니다. 정모 참석자를 체크하고 자동 배정해 주세요.</p>'}
+function paidTotal(){return cloudUser?cloudFundRows.filter(x=>x.type==='contribution').reduce((a,x)=>a+Number(x.amount),0):data.meetings.reduce((s,m)=>s+m.attendees.filter(a=>a.paid).length*2000,0)}function balance(){return cloudUser?cloudFundRows.reduce((a,x)=>a+(x.type==='payout'?-1:1)*Number(x.amount),0):Number(data.opening||0)+paidTotal()-data.payouts.reduce((s,p)=>s+p.amount,0)}function saveOpening(){if(cloudUser)return alert("초기 이월금은 중복 방지를 위해 관리자 SQL 이관으로만 등록할 수 있어요.");let v=Number($('fundOpening').value);if(!Number.isFinite(v)||v<0)return alert('0 이상의 금액을 입력해 주세요.');if(!confirm(`초기 이월금을 ${won(v)}으로 설정할까요?`))return;data.opening=v;save()}function payHoleInOne(){if(cloudUser)return alert("홀인원 지급은 서버 트랜잭션 적용 후 활성화됩니다. 현재는 조회만 가능해요.");let name=$('winner').value.trim(),date=$('winDate').value;if(!name||!date)return alert('회원 닉네임과 발생일을 입력해 주세요.');let amount=Math.floor(balance()/2);if(amount<=0)return alert('지급 가능한 기금이 없습니다.');if(!confirm(`${esc(name)} 회원에게 ${won(amount)} 지급한 것으로 기록할까요?`))return;data.payouts.push({id:uid(),name,date,amount});$('winner').value='';save()}function renderFund(){let b=balance(),p=paidTotal();$('fundBalance').textContent=won(b);$('fundPaid').textContent=won(p);$('fundHalf').textContent=won(Math.floor(Math.max(0,b)/2));$('fundOpening').value=data.opening||0;let events=cloudUser?cloudFundRows.map(x=>({date:x.occurred_at?.slice(0,10)||'',name:(data.members.find(m=>m.id===x.member_id)?.nick||'기금 거래')+' · '+(x.type==='contribution'?'납부':x.type==='payout'?'지급':'조정'),amount:x.type==='payout'?-Number(x.amount):Number(x.amount)})):[...data.meetings.flatMap(mt=>mt.attendees.filter(a=>a.paid).map(a=>({date:mt.date,name:(data.members.find(x=>x.id===a.memberId)?.nick||'?')+' · 납부',amount:2000}))),...data.payouts.map(p=>({date:p.date,name:p.name+' · 홀인원 지급',amount:-p.amount}))].sort((a,b)=>b.date.localeCompare(a.date));$('fundHistory').innerHTML=events.map(e=>`<div class="row item"><div><strong>${esc(e.name)}</strong><div class="muted">${esc(e.date)}</div></div><strong style="color:${e.amount>0?'#129c65':'#ce3284'}">${e.amount>0?'+':''}${won(e.amount)}</strong></div>`).join('')||'<p class="sub">아직 거래 내역이 없습니다.</p>'}
+function exportData(){let blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='PINHIGH_backup_'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(url)}function renderAll(){if(!currentId&&data.meetings[0])currentId=data.meetings[0].id;$('stMembers').textContent=data.members.filter(m=>m.status!=='탈퇴').length+'명';let mt=selected();$('stApplied').textContent=(mt?.attendees.length||0)+'명';$('stDate').textContent=mt?.date||'정모 없음';$('stPresent').textContent=(mt?.attendees.filter(a=>a.present).length||0)+'명';$('stBalance').textContent=won(balance());renderMembers();renderMeeting();renderRoomInputs();renderRoomResult();renderFund()};$('mtDate').value=new Date(Date.now()+9*3600000).toISOString().slice(0,10);$('winDate').value=$('mtDate').value;renderAll();
+
+// Supabase administrator authentication. Local demo data is NEVER uploaded to a production table.
+// Session variables initialized before initial render.
+const CFG=window.PINHIGH_CONFIG||{};
+async function verifyAdmin(user){
+ const {data:admin,error}=await cloudClient.from('admins').select('username,role,active').eq('auth_user_id',user.id).eq('active',true).maybeSingle();
+ if(error)throw new Error('운영진 권한 확인 실패: '+error.message);
+ if(!admin)throw new Error('등록된 활성 운영진 계정이 아닙니다.');
+ return admin;
+}
+function fromDbMember(r){return {id:r.id,nick:r.nickname||'',real:r.real_name||'',handy:r.handicap??null,g:r.g_handicap??null,left:r.is_left_handed===true,status:r.status||'활동',memo:r.admin_note||'',birth:r.birth_year?String(r.birth_year):'',region:r.region||'',joined:r.joined_at||'',danggeunCount:null,history:[]}}
+async function loadServerMembers(){
+ if(!cloudClient||!cloudUser)return;
+ const {data:rows,error}=await cloudClient.from('members').select('id,nickname,real_name,handicap,g_handicap,is_left_handed,birth_year,region,status,admin_note,joined_at').order('nickname');
+ if(error)throw new Error(error.message);
+ data.members=(rows||[]).map(fromDbMember);renderAll();
+}
+async function persistMember(m,old){
+ if(!cloudClient||!cloudUser||!cloudAdmin)throw new Error('운영진 로그인이 필요합니다.');
+ const year=m.birth.trim();let birth=null;if(year){const n=Number(year);if(!Number.isInteger(n))throw new Error('출생연도는 숫자로 입력해 주세요.');birth=n<100?(n>26?1900+n:2000+n):n;}
+ const payload={nickname:m.nick,real_name:m.real||null,handicap:m.handy,g_handicap:m.g,is_left_handed:m.left,birth_year:birth,region:m.region||null,admin_note:m.memo||null};
+ let result=old?await cloudClient.from('members').update(payload).eq('id',old.id).select('id').single():await cloudClient.from('members').insert(payload).select('id').single();
+ if(result.error)throw new Error(result.error.message);
+ // The history entry is separate and never allowed to silently undo a successful member save.
+ if(old&&(old.handy!==m.handy||old.g!==m.g)){
+  const log=await cloudClient.from('handicap_history').insert({member_id:old.id,handicap:m.handy,g_handicap:m.g,changed_by:cloudUser.id});
+  if(log.error){await loadServerMembers();throw new Error('회원값은 저장됐지만 변경 이력 기록이 실패했습니다: '+log.error.message)}
+ }
+ await loadServerMembers();
+}
+async function loadMemberHistory(memberId){
+ const {data:rows,error}=await cloudClient.from('handicap_history').select('handicap,g_handicap,changed_at').eq('member_id',memberId).order('changed_at',{ascending:false}).limit(30);
+ if(error)throw new Error(error.message);
+ const m=data.members.find(x=>x.id===memberId);if(m)m.history=(rows||[]).map(r=>({at:r.changed_at,toHandy:r.handicap,toG:r.g_handicap,fromHandy:'-',fromG:'-'}));renderMembers();
+}
+async function loadCloudSectionsSafely(){
+ const errors=[];
+ try{await loadServerMembers()}catch(e){errors.push('회원: '+e.message)}
+ try{await cloudLoadMeetings()}catch(e){errors.push('정모: '+e.message)}
+ try{await cloudLoadFund()}catch(e){errors.push('기금: '+e.message)}
+ if(errors.length){
+  const msg='로그인은 성공했지만 일부 데이터를 불러오지 못했어.\n'+errors.join('\n')+'\nSupabase 권한 및 테이블을 확인해 줘.';
+  $('loginHelp').textContent=msg;
+  alert(msg);
+ }
+}
+async function setupCloud(){
+ if(!CFG.supabaseUrl||!CFG.supabaseAnonKey)return;
+ try{
+  const mod=await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm');
+  cloudClient=mod.createClient(CFG.supabaseUrl,CFG.supabaseAnonKey);
+  const {data:res,error}=await cloudClient.auth.getSession();if(error)throw error;
+  if(res.session){try{cloudAdmin=await verifyAdmin(res.session.user);cloudUser=res.session.user;openSession();await loadCloudSectionsSafely()}catch(e){cloudUser=null;cloudAdmin=null;$('loginScreen').classList.remove('hidden');$('loginHelp').textContent='운영진 권한 확인 실패: '+e.message}}
+  cloudClient.auth.onAuthStateChange((event,session)=>{if(event==='SIGNED_OUT'||!session){cloudUser=null;cloudAdmin=null;$('loginScreen').classList.remove('hidden')}});
+  if(!cloudUser)$('loginHelp').textContent='Supabase 연결 준비 완료. PINHIGH 운영진 계정으로 로그인할 수 있습니다.';
+ }catch(e){$('loginHelp').textContent='서버 연결 실패: '+e.message;}
+}
+function openSession(){
+ $('loginScreen').classList.add('hidden');
+ $('accountLabel').textContent=cloudAdmin?'운영진 · '+cloudAdmin.username+' ('+cloudAdmin.role+') · 정모 서버 연동':'체험 모드 · 이 기기에만 저장';
+ renderAll();
+}
+function demoSignIn(){cloudUser=null;cloudAdmin=null;openSession()}
+async function signIn(){
+ if(!cloudClient)return alert('서버 연결에 실패했습니다. 설정을 확인해 주세요.');
+ if(loginBusy)return;loginBusy=true;
+ try{
+  const {data:result,error}=await cloudClient.auth.signInWithPassword({email:$('loginEmail').value.trim(),password:$('loginPassword').value});
+  if(error)throw error;
+  cloudAdmin=await verifyAdmin(result.user);cloudUser=result.user;openSession();await loadCloudSectionsSafely();
+ }catch(e){await cloudClient.auth.signOut();cloudUser=null;cloudAdmin=null;alert('로그인 실패: '+e.message)}finally{loginBusy=false}
+}
+async function signOut(){if(cloudClient&&cloudUser)await cloudClient.auth.signOut();cloudUser=null;cloudAdmin=null;$('loginPassword').value='';$('loginScreen').classList.remove('hidden')}
+function syncCloud(){/* Production writes intentionally disabled pending schema mapping & audited RLS. */}
+// Draw the saved assignments to a genuine canvas image: never AI-retype member names.
+function makePoster(){const mt=selected();if(!mt||!mt.assignment?.length)return alert('최종 방 배정부터 저장해 주세요.');const W=1080,pad=44,cols=2,gap=22,cardW=(W-pad*2-gap)/2,top=400,cardH=335;const rowCount=Math.ceil(mt.assignment.length/2),H=Math.max(1100,top+rowCount*(cardH+gap)+80);const cvs=document.createElement('canvas');cvs.width=W;cvs.height=H;let ctx=cvs.getContext('2d');const bg=ctx.createLinearGradient(0,0,W,H);bg.addColorStop(0,'#8111ed');bg.addColorStop(.5,'#e716a3');bg.addColorStop(1,'#ff7b24');ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+const rr=(x,y,w,h,r)=>{ctx.beginPath();ctx.roundRect(x,y,w,h,r)};
+ctx.textAlign='center';ctx.fillStyle='white';ctx.font='bold 32px system-ui';ctx.fillText('좋은 사람, 좋은 샷, 좋은 하루',W/2,80);ctx.font='italic 900 104px system-ui';ctx.fillText('TEAM PINHIGH',W/2,215);ctx.font='bold 35px system-ui';const ds=mt.date||'';ctx.fillText(`${ds} · ${mt.venue||'장소 미등록'}`,W/2,290);ctx.font='bold 36px system-ui';const total=mt.assignment.reduce((s,r)=>s+r.ids.length,0);ctx.fillText(`${total}명 · ${mt.assignment.length}개방 · ${mt.mode==='balanced'?'핸디 균형':'랜덤'} 배정`,W/2,350);
+mt.assignment.forEach((a,i)=>{const room=mt.rooms.find(r=>r.id===a.roomId);const row=Math.floor(i/2),col=i%2,x=pad+col*(cardW+gap),y=top+row*(cardH+gap);ctx.fillStyle='#fff9ff';rr(x,y,cardW,cardH,30);ctx.fill();ctx.textAlign='left';ctx.fillStyle='#df1c8b';ctx.font='bold 33px system-ui';ctx.fillText((room?.name||'방')+(room?.left?' · 좌타방':''),x+27,y+55,cardW-140);ctx.textAlign='right';ctx.font='bold 27px system-ui';ctx.fillText(a.ids.length+'명',x+cardW-23,y+55);ctx.strokeStyle='#f3c8e2';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(x+23,y+77);ctx.lineTo(x+cardW-23,y+77);ctx.stroke();a.ids.forEach((id,j)=>{const m=data.members.find(v=>v.id===id);let name=m?.nick||'회원';let handicap=m?.g;let text=name+' · '+(handicap==null?'G-':`G${handicap}`);let bx=x+25,by=y+96+j*72,bw=cardW-50,bh=58;let gr=ctx.createLinearGradient(bx,by,bx+bw,by);gr.addColorStop(0,'#8030f2');gr.addColorStop(.62,'#e322a7');gr.addColorStop(1,'#ff654c');ctx.fillStyle=gr;rr(bx,by,bw,bh,29);ctx.fill();ctx.fillStyle='white';ctx.textAlign='center';ctx.font='bold 28px system-ui';ctx.fillText(text,bx+bw/2,by+39,bw-25)})});const url=cvs.toDataURL('image/png');$('posterOutput').innerHTML='<div class="posterCard"><img class="posterPreview" alt="정모 배정 이미지 미리보기" src="'+url+'"><p class="sub">카톡에 공유하려면 PNG 저장 후 카톡 채팅방에서 사진 첨부해 주세요.</p><div class="actions"><button class="gradient" id="downloadPoster">PNG 다운로드</button><button class="btn" id="sharePoster">공유하기</button></div></div>'; $('downloadPoster').onclick=()=>{let a=document.createElement('a');a.href=url;a.download='PINHIGH_'+ds+'_방배정.png';a.click()};$('sharePoster').onclick=async()=>{try{let blob=await new Promise(ok=>cvs.toBlob(ok,'image/png'));let f=new File([blob],'PINHIGH_방배정.png',{type:'image/png'});if(navigator.canShare?.({files:[f]}))await navigator.share({files:[f],title:'PINHIGH 방배정'});else alert('이 브라우저에서는 이미지 직접 공유를 지원하지 않습니다. PNG를 저장한 후 카톡에 첨부해 주세요.')}catch(e){if(e.name!=='AbortError')alert(e.message)}}}
+
+// Fund announcement is drawn from current financial state to a canvas, keeping numeric labels exact.
+function makeFundPoster(){
+ const W=1080,H=1920,cvs=document.createElement('canvas');cvs.width=W;cvs.height=H;
+ const ctx=cvs.getContext('2d'),b=ctx.createLinearGradient(0,0,W,H);b.addColorStop(0,'#6212b9');b.addColorStop(.52,'#dc239e');b.addColorStop(1,'#ff8c43');ctx.fillStyle=b;ctx.fillRect(0,0,W,H);
+ const rr=(x,y,w,h,r)=>{ctx.beginPath();ctx.roundRect(x,y,w,h,r);};
+ const text=(str,x,y,size=34,color='#fff',align='left',weight=700)=>{ctx.font=`${weight} ${size}px system-ui, sans-serif`;ctx.fillStyle=color;ctx.textAlign=align;ctx.fillText(String(str),x,y)};
+ const bal=balance(),total=paidTotal(),opening=cloudUser?0:Number(data.opening||0),payouts=cloudUser?cloudFundRows.filter(x=>x.type==='payout').reduce((a,v)=>a+Number(v.amount),0):data.payouts.reduce((a,v)=>a+Number(v.amount||0),0),half=Math.floor(Math.max(0,bal)/2);
+ text('좋은 사람, 좋은 샷, 좋은 하루',W/2,110,34,'#fff','center',600);
+ text('TEAM PINHIGH',W/2,240,108,'#fff','center',900);
+ text($('fundPosterTitle').value.trim()||'홀인원 기금 현황',W/2,337,42,'#fff','center');
+ text('기준일 '+new Date().toLocaleDateString('ko-KR'),W/2,395,30,'#fff','center',500);
+ ctx.fillStyle='#fff';rr(55,463,W-110,305,38);ctx.fill();
+ text('현재 홀인원 기금 잔액',W/2,548,34,'#8c388d','center');text(won(bal),W/2,660,91,'#6020a9','center',900);
+ const boxes=[['기존 이월 기금',opening],['총 납부 기금',total],['누적 지급 기금',payouts],['홀인원 발생 시 50% 지급',half]];
+ boxes.forEach(([label,value],i)=>{const col=i%2,row=Math.floor(i/2),x=55+col*495,y=802+row*238;ctx.fillStyle='#fff9ff';rr(x,y,475,214,27);ctx.fill();text(label,x+25,y+67,27,'#8b488d','left',600);text(won(value),x+25,y+144,45,'#5d218f','left',850)});
+ ctx.fillStyle='#fff9ff';rr(55,1313,970,318,30);ctx.fill();text('최근 홀인원 지급 내역',92,1390,35,'#76259e');let recent=[...data.payouts].sort((a,b)=>String(b.date).localeCompare(String(a.date))).slice(0,3);
+ if(!recent.length)text('지급 내역 없음',92,1473,29,'#92749f','left',500);else recent.forEach((p,i)=>{const nick=String(p.name||'회원').slice(0,16);text(`${p.date||''}  ${nick}`,92,1460+i*66,28,'#633579','left',550);text('-'+won(p.amount),980,1460+i*66,28,'#c92a81','right',750)});
+ text('납부 확인된 기금 기준 · 결석자의 납부금도 포함',W/2,1711,27,'#fff','center',500);
+ text('TEAM PINHIGH GOLF CLUB',W/2,1808,36,'#fff','center',900);
+ const url=cvs.toDataURL('image/png');$('fundPosterOutput').innerHTML='<div class="posterCard"><img class="posterPreview" alt="홀인원 기금 현황 공유 이미지" src="'+url+'"><p class="sub">이미지 저장 또는 공유를 눌러 카카오톡에 보내세요.</p><div class="actions"><button class="gradient" id="fundPosterDownload">PNG 다운로드</button><button class="btn" id="fundPosterShare">공유하기</button></div></div>';
+ $('fundPosterDownload').onclick=()=>{const a=document.createElement('a');a.href=url;a.download='PINHIGH_홀인원기금_'+new Date().toISOString().slice(0,10)+'.png';a.click()};
+ $('fundPosterShare').onclick=async()=>{try{const blob=await new Promise(ok=>cvs.toBlob(ok,'image/png'));const f=new File([blob],'PINHIGH_홀인원기금.png',{type:'image/png'});if(navigator.canShare?.({files:[f]}))await navigator.share({files:[f],title:'PINHIGH 홀인원 기금 현황'});else alert('이 브라우저에서는 직접 공유를 지원하지 않습니다. PNG를 저장해 카카오톡에서 사진을 첨부해 주세요.')}catch(e){if(e.name!=='AbortError')alert(e.message)}};
+}
+
+
+// v9 cloud adapter: browser-only Supabase publishable key + RLS; never store service-role keys.
+// Cloud fund rows initialized before initial render.
+const requireCloud=()=>{if(!cloudUser||!cloudClient)throw Error('운영진 로그인이 필요합니다.')};
+const check=(r)=>{if(r.error)throw Error(r.error.message);return r.data};
+const whenKST=(date,time)=>new Date(date+'T'+(time||'20:00')+':00+09:00').toISOString();
+async function cloudLoadMeetings(){
+ requireCloud();
+ const ms=check(await cloudClient.from('meetings').select('*').order('starts_at',{ascending:false}).limit(100))||[];
+ const ids=ms.map(m=>m.id);
+ let ps=[],rs=[];
+ if(ids.length){ps=check(await cloudClient.from('meeting_participants').select('*').in('meeting_id',ids))||[];rs=check(await cloudClient.from('meeting_rooms').select('*').in('meeting_id',ids))||[];}
+ data.meetings=ms.map(m=>{
+  const rooms=rs.filter(r=>r.meeting_id===m.id).map(r=>({id:r.id,name:r.label,left:r.is_left_handed_room===true}));
+  const attendees=ps.filter(p=>p.meeting_id===m.id).map(p=>{const mem=data.members.find(x=>x.id===p.member_id);return{memberId:p.member_id,present:p.attendance_status==='present',paid:p.payment_status==='paid',handy:mem?.handy??null,g:mem?.g??null}});
+  const assignment=rooms.map(r=>({roomId:r.id,ids:ps.filter(p=>p.meeting_id===m.id&&p.room_id===r.id).map(p=>p.member_id)})).filter(r=>r.ids.length);
+  return{id:m.id,title:m.title,venue:m.venue,status:m.status,date:m.starts_at?.slice(0,10),time:new Date(m.starts_at).toLocaleTimeString('ko-KR',{timeZone:'Asia/Seoul',hour:'2-digit',minute:'2-digit',hour12:false}),attendees,rooms,assignment,mode:m.assignment_mode||'random'};
+ });
+ if(!data.meetings.some(m=>m.id===currentId))currentId=data.meetings[0]?.id||null;
+ draftRooms=(selected()?.rooms||[]).map(r=>({...r}));renderAll();
+}
+async function cloudSaveMeeting(){
+ try{
+  requireCloud();const title=$('mtTitle').value.trim(),date=$('mtDate').value,names=createNames();
+  if(!title||!date)throw Error('정모명과 날짜를 입력해 주세요.');
+  const missing=names.filter(n=>!data.members.some(m=>m.nick===n));
+  if(missing.length)throw Error('먼저 회원관리에서 등록해 주세요: '+missing.slice(0,8).join(', '));
+  const added=check(await cloudClient.from('meetings').insert({type:'regular',title,starts_at:whenKST(date,$('mtTime').value),venue:$('mtVenue').value.trim(),fee:0,status:'planned'}).select('id').single());
+  let participants=names.map(n=>({meeting_id:added.id,member_id:data.members.find(m=>m.nick===n).id,application_status:'applied',attendance_status:'pending',payment_status:'unpaid'}));
+  let result=participants.length?await cloudClient.from('meeting_participants').insert(participants):{error:null};
+  if(result.error){alert('정모는 만들어졌지만 신청자 저장이 실패했습니다: '+result.error.message+'\n정모를 다시 만들지 말고 관리자에게 알려 주세요.');await cloudLoadMeetings();return}
+  $('mtTitle').value='';$('mtText').value='';createMemberSelection.clear();currentId=added.id;await cloudLoadMeetings();setMeetingView('manage');alert('정모와 신청자 '+names.length+'명이 서버에 저장됐습니다.');
+ }catch(e){alert('정모 서버 저장 실패: '+e.message)}
+}
+async function cloudToggleAttend(mid,id,key,value){if(!ensureEditable())return;
+ try{
+  requireCloud();const column=key==='paid'?'payment_status':'attendance_status';
+  if(key==='paid')throw Error('기금 납부는 거래 중복 방지 RPC를 적용한 후 활성화됩니다.');
+  const val=value?'present':'absent';
+  check(await cloudClient.from('meeting_participants').update({[column]:val}).eq('meeting_id',mid).eq('member_id',id).select('id'));
+  await cloudLoadMeetings();
+ }catch(e){alert(e.message);await cloudLoadMeetings().catch(()=>{})}
+}
+async function cloudSaveRooms(){if(!ensureEditable())return;
+ try{
+  requireCloud();const mt=selected();if(!mt)throw Error('정모를 선택하세요.');
+  if(!draftRooms.length||draftRooms.length>5)throw Error('방은 1~5개로 설정하세요.');
+  const names=draftRooms.map(r=>r.name.trim());if(names.some(n=>!n)||new Set(names).size!==names.length)throw Error('방번호가 비어 있거나 중복입니다.');
+  if(mt.assignment.length)throw Error('배정된 방이 있어 수정할 수 없습니다. 먼저 배정 데이터를 정리해 주세요.');
+  for(const r of draftRooms){
+   const payload={label:r.name.trim(),capacity:3,is_left_handed_room:!!r.left};
+   if(mt.rooms.some(x=>x.id===r.id))check(await cloudClient.from('meeting_rooms').update(payload).eq('id',r.id).eq('meeting_id',mt.id).select('id'));
+   else check(await cloudClient.from('meeting_rooms').insert({...payload,meeting_id:mt.id}).select('id'));
+  }
+  // Existing room deletion is deliberately disabled to prevent accidental loss of assignments.
+  if(mt.rooms.length>draftRooms.length)alert('기존 방 삭제는 안전을 위해 막아두었어. 기존 방은 그대로 유지돼.');
+  await cloudLoadMeetings();alert('방 번호와 좌타방 설정을 서버에 저장했어.');
+ }catch(e){alert('방 저장 실패: '+e.message)}
+}
+async function cloudPersistAssignment(mt){
+ requireCloud();
+ // Update every attendee individually; do not leave a success message if one update fails.
+ for(const room of mt.assignment)for(const id of room.ids){
+  check(await cloudClient.from('meeting_participants').update({room_id:room.roomId}).eq('meeting_id',mt.id).eq('member_id',id).select('id'));
+ }
+ await cloudLoadMeetings();showNote('서버에 방 배정 결과가 저장됐어.',false);
+}
+async function cloudLoadFund(){
+ requireCloud();cloudFundRows=check(await cloudClient.from('hole_in_one_transactions').select('id,type,amount,occurred_at,member_id,meeting_id,note').order('occurred_at',{ascending:false}).limit(1000))||[];
+ renderAll();
+}
+
+setupCloud();
+</script></body></html>
