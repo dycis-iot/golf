@@ -5,11 +5,73 @@
 #loginScreen{position:fixed;inset:0;background:#f7f6fb;z-index:100;display:flex;align-items:center;justify-content:center;padding:18px;overflow:auto}
 #loginScreen.hidden{display:none}.loginbox{max-width:420px;width:100%;background:white;border:1px solid #e7ddf0;box-shadow:0 10px 50px #4b11601e;border-radius:24px;overflow:hidden}.loginbrand{background:linear-gradient(125deg,#8614e9,#e912aa 66%,#ff8a31);color:white;text-align:center;padding:20px}.loginbrand img{height:85px;width:85px;border-radius:15px;object-fit:cover}.logincontent{padding:20px}.notice{font-size:12px;line-height:1.6;color:#705d38;background:#fff4da;border-radius:12px;padding:12px;margin:12px 0}
 #accountBar{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 3px;margin:0 0 12px;font-size:12px}.posterCard{border-radius:15px;padding:14px;background:#f7edff}.posterPreview{width:100%;max-height:520px;object-fit:contain;border-radius:12px;background:#eadffa}.widebtn{width:100%}
+
+/* PINHIGH Design System — mobile-first UI refresh */
+:root{--p:#693bd3;--pink:#ed4b9c;--orange:#f1a15a;--bg:#f5f6fa;--ink:#202338;--muted:#70778d;--line:#e7e9f1;--card:#fff;--shadow:0 6px 24px rgba(32,35,56,.045)}
+html{scroll-behavior:smooth}body{font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;padding:0 16px calc(112px + env(safe-area-inset-bottom))}
+#accountBar{padding:13px 2px 12px;margin:0;color:var(--muted);font-size:12px}
+#accountBar #accountLabel{font-weight:750;color:#4d5470}
+.hero{position:relative;overflow:hidden;margin:0 -16px 24px;padding:26px 23px 28px;background:linear-gradient(118deg,#4d34aa 0%,#8253d3 67%,#ae76da 100%);border-radius:0 0 30px 30px;box-shadow:0 10px 27px rgba(76,52,159,.14)}
+.hero:after{content:"";position:absolute;right:-56px;top:-92px;width:230px;height:230px;border:43px solid rgba(255,255,255,.08);border-radius:50%;pointer-events:none}
+.hero h1{font-size:25px;font-weight:850;letter-spacing:-1.1px;line-height:1.25;margin:4px 0 10px}
+.hero p{font-size:12px;color:#f0e9ff;line-height:1.6}
+.eyebrow{font-size:10px;letter-spacing:2px;opacity:.85}
+.title{font-size:19px;letter-spacing:-.65px;margin:23px 0 13px;color:#24273d}
+.title:before{content:"";display:inline-block;vertical-align:middle;width:4px;height:18px;background:#7955d9;border-radius:3px;margin-right:9px}
+.card{border-radius:19px;padding:19px;border:1px solid #eaecf3;box-shadow:var(--shadow);margin-bottom:14px}
+.card>strong,.card .row>strong{font-size:15px;letter-spacing:-.3px}
+.sub{color:var(--muted);font-size:12px;line-height:1.7;margin:8px 0 17px}
+.metrics{gap:10px}
+.metric{background:white;border:1px solid #e9eaf3;border-radius:18px;min-height:118px;padding:16px 14px;box-shadow:var(--shadow)}
+.metric .lbl{font-weight:700;font-size:12px;color:#6c7288}
+.metric .num{color:#332753;font-size:27px;font-weight:850;letter-spacing:-1.2px;margin:12px 0 2px}
+.metric small{font-size:11px}
+.gradient{background:#6844ca;color:#fff;border:1px solid #6844ca;box-shadow:0 4px 10px #6844ca22;padding:13px 16px;border-radius:12px;font-weight:770;min-height:44px;transition:transform .15s ease,background .15s ease}
+.gradient:active,.btn:active{transform:scale(.985)}.gradient:hover{background:#5535b3}
+.btn{border-color:#e0e2ed;color:#42455d;background:#fff;min-height:44px;padding:11px 15px;font-weight:700}
+.btn.sm{min-height:36px}
+.actions{gap:9px}.actions>.gradient{flex-grow:1}
+.field{gap:7px;margin-bottom:17px}
+.field label{color:#50556e;font-weight:750;font-size:12px}
+.field input,.field select,.field textarea,.input{font-size:16px;border-color:#dee1eb;background:#fcfcfe;border-radius:12px;padding:13px;min-height:48px;transition:border .15s,box-shadow .15s}
+.field input:focus,.field select:focus,.field textarea:focus,.input:focus{outline:none;border-color:#8264d7;box-shadow:0 0 0 3px #8264d722;background:white}
+.field textarea{min-height:114px}
+.field input::placeholder,.field textarea::placeholder{color:#a5a9b7}
+.item{border-color:#e9eaf2;background:#fff;border-radius:15px;padding:14px}
+.item strong{color:#292a42}
+.listrow{padding:14px 0;gap:12px}.check{width:23px;height:23px;accent-color:#7150ca}
+.tag{background:#eee8fc;color:#6844b9;font-size:11px;padding:5px 9px}.tag.pink{background:#fff0f7;color:#b43177}
+.tag.green{background:#e5f8ef;color:#147750}
+.room{background:#faf9ff;border:1px solid #e5e0f8;border-radius:17px;padding:17px}
+.room h3{font-size:16px;color:#4d3298}
+.pillradio button{min-height:45px;border-color:#e2e4ee}
+.pillradio button.active{border-color:#7455cd;background:#f5f0ff;color:#6242b6}
+.tabbar{z-index:25;max-width:480px;left:50%;right:auto;transform:translateX(-50%);width:calc(100% - 20px);bottom:10px;padding:9px 5px calc(9px + env(safe-area-inset-bottom));border:1px solid #e8e8f0;border-radius:22px;box-shadow:0 8px 30px #2222431e;justify-content:space-around}
+.tabbar button{font-size:11px;min-width:68px;border-radius:15px;padding:8px 6px 7px;gap:5px;transition:background .15s}
+.tabbar button span{font-size:21px;height:25px;line-height:25px}
+.tabbar button.active{color:#6541c1;background:#f2ecff}
+#meetingModeChooser{padding:24px 18px}
+#meetingModeChooser>.stack{gap:12px}
+#meetingModeChooser button{min-height:70px!important;border-radius:16px!important;text-align:left!important;font-size:15px!important;padding-left:20px!important}
+#meetingCreateView>.btn,#meetingManageView>.btn{margin:0 0 13px}
+#meetingManageView #meetingAddTools{margin-top:20px!important}
+#meetingDetail .listrow{flex-wrap:wrap}
+#meetingCreateView .field:has(#createMemberPicker),#meetingAddTools{border-radius:16px}
+.loginbox{border-radius:27px;box-shadow:0 24px 65px #2d225126}
+.loginbrand{background:linear-gradient(125deg,#4e36ab,#9161d6);padding:30px 20px}
+.logincontent{padding:26px 23px}
+#loginScreen{background:linear-gradient(165deg,#eeebfb,#f7f8fb 60%)}
+.notice{border:1px solid #f3e4bd;background:#fff9eb;color:#755d36}
+@media(max-width:480px){.cols{grid-template-columns:1fr 1fr}.cols .field{min-width:0}.actions{display:flex}.actions button{max-width:100%}.row{flex-wrap:wrap}.metric .num{font-size:24px}.card{padding:16px}.hero{padding:25px 20px 26px}}
+@media(max-width:360px){.cols{grid-template-columns:1fr}.metrics{gap:8px}.tabbar button{min-width:58px}.metric{padding:13px 10px}.metric .num{font-size:22px}}
+@media(min-width:800px){.wrap{padding-bottom:45px}.hero{margin:10px 0 20px;border-radius:22px}.tabbar{position:sticky;top:10px;bottom:auto;transform:none;left:auto;right:auto;max-width:1120px;width:100%;border-radius:17px;padding:8px;margin:0 auto 15px}.tabbar button{display:flex;gap:9px;font-size:13px}.tabbar button span{font-size:19px}.metrics{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.gradient,.tabbar button{transition:none}}
 </style></head><body>
 <div id="loginScreen"><div class="loginbox"><div class="loginbrand"><h2>TEAM PINHIGH</h2><div>운영진 전용 로그인</div></div><div class="logincontent"><div class="field"><label>이메일 아이디</label><input type="email" id="loginEmail" autocomplete="username" placeholder="운영진 이메일"></div><div class="field"><label>비밀번호</label><input type="password" id="loginPassword" autocomplete="current-password" placeholder="비밀번호"></div><button class="gradient widebtn" onclick="signIn()">로그인</button><div class="notice" id="loginHelp">서버 연결 전에는 실제 계정 로그인이 활성화되지 않습니다. 아래의 체험하기로 기능을 시험할 수 있습니다.</div><button class="btn widebtn" onclick="demoSignIn()">로그인 없이 체험하기 (이 기기에만 저장)</button></div></div></div>
-<main class="wrap"><div id="accountBar"><span id="accountLabel">체험 모드</span><button class="btn sm" onclick="signOut()">로그아웃</button></div><header class="hero"><div><div class="eyebrow">TEAM PINHIGH · ADMIN v9.1</div><h1>핀하이 운영관리</h1><p>좋은 사람, 좋은 샷, 좋은 하루 ⛳</p><p style="font-size:11px;margin-top:11px">모바일 최적화 · 운영진 전용</p></div></header>
-<nav class="tabbar" id="nav"><button data-tab="home" class="active"><span>⌂</span>홈</button><button data-tab="members"><span>♙</span>회원</button><button data-tab="meetings"><span>▦</span>정모</button><button data-tab="fund"><span>◉</span>기금</button></nav>
-<section class="section active" id="home"><div class="title">운영진 대시보드</div><div class="metrics"><div class="metric"><div class="lbl">전체 회원</div><div class="num" id="stMembers">0명</div><small>등록 회원</small></div><div class="metric"><div class="lbl">최근 정모 신청</div><div class="num" id="stApplied">0명</div><small id="stDate">정모 없음</small></div><div class="metric"><div class="lbl">출석 회원</div><div class="num" id="stPresent">0명</div><small>최근 정모 기준</small></div><div class="metric"><div class="lbl">홀인원 기금</div><div class="num" style="font-size:19px" id="stBalance">0원</div><small>확인된 납부 기준</small></div></div><div class="title">빠른 실행</div><div class="card actions"><button class="gradient" onclick="go('meetings')">＋ 정모 만들기</button><button class="btn" onclick="go('rooms')">⚑ 방 배정</button><button class="btn" onclick="go('members')">회원 등록</button></div><div class="card"><strong>운영 방식</strong><p class="sub">당근 명단을 텍스트로 붙여넣고, 입금을 확인한 다음 정모 당일 출석을 체크하세요. 방 배정은 출석한 회원만 대상으로 합니다. 기금 수납/지급은 현재 거래 중복 방지를 준비 중입니다.</p><div class="warn">회원은 서버에 저장되며 정모·기금은 이 기기에 저장됩니다. 운영진 5명이 동시에 사용하는 로그인·공유 기능은 서버 동기화는 아직 비활성화되어 있습니다. 실제 계정 로그인 후에도 이 화면의 편집 데이터는 이 기기에만 저장됩니다.</div></div></section>
+<main class="wrap"><div id="accountBar"><span id="accountLabel">체험 모드</span><button class="btn sm" onclick="signOut()">로그아웃</button></div><header class="hero"><div><div class="eyebrow">PINHIGH · CLUB OPERATIONS</div><h1>핀하이 운영관리</h1><p>회원부터 정모·방 배정까지, 한곳에서 간편하게</p></div></header>
+<nav class="tabbar" id="nav"><button data-tab="home" class="active"><span>⌂</span>대시보드</button><button data-tab="members"><span>♙</span>회원관리</button><button data-tab="meetings"><span>▦</span>정모관리</button><button data-tab="fund"><span>◉</span>기금</button></nav>
+<section class="section active" id="home"><div class="title">운영진 대시보드</div><div class="metrics"><div class="metric"><div class="lbl">전체 회원</div><div class="num" id="stMembers">0명</div><small>등록 회원</small></div><div class="metric"><div class="lbl">최근 정모 신청</div><div class="num" id="stApplied">0명</div><small id="stDate">정모 없음</small></div><div class="metric"><div class="lbl">출석 회원</div><div class="num" id="stPresent">0명</div><small>최근 정모 기준</small></div><div class="metric"><div class="lbl">홀인원 기금</div><div class="num" style="font-size:19px" id="stBalance">0원</div><small>확인된 납부 기준</small></div></div><div class="title">바로가기</div><div class="card actions"><button class="gradient" onclick="go('meetings')">＋ 정모 관리</button><button class="btn" onclick="go('meetings');setMeetingView('manage')">⚑ 방 배정</button><button class="btn" onclick="go('members')">회원 등록</button></div><div class="card"><strong>운영 방식</strong><p class="sub">당근 명단을 텍스트로 붙여넣고, 입금을 확인한 다음 정모 당일 출석을 체크하세요. 방 배정은 출석한 회원만 대상으로 합니다. 기금 수납/지급은 현재 거래 중복 방지를 준비 중입니다.</p><div class="warn">회원과 정모 정보는 서버 연동 상태를 확인하면서 관리하세요. 기금 지급·입금 등 회계 관련 작업은 거래 내역을 검증한 후 진행하세요.</div></div></section>
 <section class="section" id="members"><div class="title">회원관리</div><div class="card"><div class="row"><strong>📋 당근 회원 간편 등록</strong><span class="tag">신규 기능</span></div><p class="sub">당근 프로필에서 복사한 닉네임 또는 여러 회원의 정보를 한 줄씩 붙여넣으세요. 화면을 캡처한 경우 닉네임 한 줄만 입력해도 됩니다. 등록 전 분석 결과를 확인합니다.</p><div class="field"><label>회원 정보 붙여넣기</label><textarea id="bulkMemberText" rows="5" placeholder="별가루🌟 (W81.잠실.G10)&#10;금광동곧미남 (M81 성남 G-1)&#10;아랑파파/M76/성남/G-2"></textarea></div><div class="actions"><button class="gradient" onclick="previewBulkMembers()">명단 분석하기</button><button class="btn" onclick="document.getElementById('bulkMemberText').value='';document.getElementById('bulkMemberPreview').innerHTML=''">지우기</button></div><div id="bulkMemberPreview" style="margin-top:12px"></div></div><div class="card"><div class="row"><strong id="memberFormTitle">회원 등록</strong><button class="btn sm" onclick="clearMemberForm()">초기화</button></div><br><div class="cols"><div class="field"><label>닉네임 *</label><input id="mNick" placeholder="당근 닉네임"></div><div class="field"><label>실명</label><input id="mReal" placeholder="실명"></div><div class="field"><label>핸디</label><input type="number" step="0.1" id="mHandy" placeholder="예: 7"></div><div class="field"><label>G핸디</label><input type="number" step="0.1" id="mG" placeholder="예: -1"></div><div class="field"><label>타석 방향</label><select id="mLeft"><option value="false">우타</option><option value="true">좌타</option></select></div><div class="field"><label>출생연도 (2자리)</label><input id="mBirth" inputmode="numeric" placeholder="예: 81"></div><div class="field"><label>지역</label><input id="mRegion" placeholder="예: 잠실"></div><div class="field"><label>회원 상태</label><select id="mStatus"><option>활동</option><option>휴면</option><option>탈퇴</option></select></div></div><div class="field"><label>당근 가입일 (참고)</label><input id="mJoined" placeholder="예: 2025-11-18"></div><div class="field"><label>당근 일정 참여 수 (참고)</label><input id="mDanggeun" type="number" min="0" placeholder="예: 72"></div><div class="field"><label>비고</label><input id="mMemo" placeholder="운영진 메모"></div><button class="gradient" style="width:100%" onclick="saveMember()">회원 저장</button></div><div class="card"><div class="row"><strong>회원 목록 <span id="memberCount" class="tag">0명</span></strong><button class="btn sm" onclick="exportData()">백업</button></div><br><div class="field"><input id="memberSearch" placeholder="닉네임·실명 검색" oninput="renderMembers()"></div><div id="memberList" class="stack"></div></div></section>
 <section class="section" id="meetings"><div class="title">정모관리</div>
 <div class="card" id="meetingModeChooser"><strong>무엇을 할까요?</strong><p class="sub">새 정모를 만들거나 등록된 정모를 선택해 관리할 수 있어요.</p><div class="stack"><button class="gradient" style="width:100%;text-align:left;padding:18px" onclick="setMeetingView('create')">＋ 새 정모 만들기</button><button class="btn" style="width:100%;text-align:left;padding:18px" onclick="setMeetingView('manage')">▦ 등록된 정모 관리</button></div></div>
