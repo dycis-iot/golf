@@ -494,7 +494,7 @@ async function cloudPersistAssignment(mt){
  }
  await cloudLoadMeetings();showNote('서버에 방 배정 결과가 저장됐어.',false);
 }
-async async function cloudLoadFund(){
+async function cloudLoadFund(){
  requireCloud();cloudFundRows=check(await cloudClient.from('hole_in_one_transactions').select('id,type,amount,occurred_at,member_id,meeting_id,note').order('occurred_at',{ascending:false}).limit(1000))||[];
  await probeFundRpc();renderAll();
 }
