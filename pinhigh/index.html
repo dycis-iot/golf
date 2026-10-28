@@ -104,6 +104,59 @@ html{scroll-behavior:smooth}body{font-size:14px;line-height:1.55;-webkit-font-sm
 .picker-controls{margin:10px 0}.selected-chips{display:flex;flex-wrap:wrap;gap:6px;max-height:105px;overflow:auto}
 .selected-chip{display:inline-flex;align-items:center;background:#eeeaff;color:#5434a5;font-size:11px;padding:5px 9px;border-radius:18px;font-weight:700}
 .selection-list{border:1px solid #e8e9f2;border-radius:12px;padding:5px}
+
+/* PINHIGH APP visual design adaptation — source: supplied pinhigh_app.zip */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&display=swap');
+:root{--p:#9e15f4;--pink:#ee3a9d;--orange:#ffac49;--bg:#f8f6fc;--ink:#252032;--muted:#7c7686;--line:#ece7f1;--card:#fff;--shadow:0 3px 15px rgba(48,20,71,.055)}
+body{font-family:'Pretendard Variable',Pretendard,system-ui,sans-serif;background:#f8f6fc;color:var(--ink);letter-spacing:-.015em}
+.wrap{max-width:1060px;padding-left:16px;padding-right:16px}
+.hero{background:linear-gradient(125deg,#921bf0 0%,#d52ab9 61%,#ffa64a 120%);border-radius:0 0 28px 28px;margin-bottom:18px;padding:25px 20px 28px;box-shadow:none}
+.hero:after{border-color:rgba(255,255,255,.11)}
+.hero .eyebrow{font-family:'Barlow Condensed','Pretendard Variable',sans-serif;letter-spacing:.15em;font-weight:700;opacity:.9}
+.hero h1{font-weight:820;font-size:26px;letter-spacing:-1px}
+.hero p{color:#fff;opacity:.91}
+.title{font-weight:830;letter-spacing:-.7px;font-size:20px;color:#2c2136}
+.title:before{background:var(--p);border-radius:3px}
+.card{border-color:#eee9f4;border-radius:20px;background:#fff;box-shadow:0 4px 15px rgba(50,24,65,.045);padding:18px}
+.card>strong,.card .row>strong{font-size:15px;font-weight:800}
+.metric{border:1px solid #eee8f2;border-radius:18px;box-shadow:none;background:#fff;min-height:112px}
+.metric .num{font-family:'Barlow Condensed','Pretendard Variable',sans-serif;font-size:29px;letter-spacing:0;font-weight:800;color:#292131}
+.metric .lbl{font-size:12px;color:#817b8b}
+.gradient{background:linear-gradient(115deg,#9718ef,#bf25d5 75%,#e64aae);border:0;border-radius:13px;box-shadow:0 4px 12px rgba(151,24,239,.13);font-size:14px;min-height:46px}
+.gradient:hover{background:linear-gradient(115deg,#8010dc,#b31bc9)}
+.btn{border-radius:13px;border:1px solid #e8e2ef;background:#fff;color:#51485d;box-shadow:none}
+.btn:hover{background:#faf7fd}
+.field label{font-size:12px;color:#5b5166;font-weight:760}
+.field input,.field select,.field textarea,.input{border-radius:14px;border:1px solid #e8e2ed;background:#fcfbfe;font-family:'Pretendard Variable',sans-serif}
+.field input:focus,.field select:focus,.field textarea:focus,.input:focus{border-color:#b15bf3;box-shadow:0 0 0 3px rgba(158,21,244,.1)}
+.tag{border-radius:9px;background:#f6eaff;color:#8c1ac6;font-weight:750}
+.tag.pink{background:#ffe9f5;color:#d3278a}.tag.green{background:#e9faef;color:#198854}
+.pillradio button.active{color:#921cd3;background:#f9f0ff;border-color:#ab45ee}
+.check,input[type=checkbox]{accent-color:#a018f1}
+.tabbar{border-color:#efe9f5;border-radius:21px;box-shadow:0 7px 28px rgba(61,28,79,.12);background:rgba(255,255,255,.97);backdrop-filter:blur(14px)}
+.tabbar button{border-radius:14px;color:#9c95a3}
+.tabbar button.active{background:#f6eaff;color:#971bd9}
+.room{background:#fcf9ff;border:1px solid #eee0fa;border-radius:16px}
+.room h3{color:#7820a7}
+.amount{font-family:'Barlow Condensed','Pretendard Variable',sans-serif;color:#8f19ce;font-size:31px;letter-spacing:0}
+.meeting-filter{background:#f0ebf5}
+.meeting-filter button.active{color:#8e1cce}
+.meeting-hub-card{border-radius:18px;border-color:#eee8f2;box-shadow:0 3px 12px rgba(69,31,81,.04)}
+.meeting-date{background:#f5eaff;color:#8c1ac6}
+.meeting-hub-meta em{background:#faf6fd}
+.meeting-empty{border-color:#e9dcef}
+.attendee-optional{border-color:#e9d9f4;background:#fdfaff}
+.attendee-optional summary{color:#8825bd}
+.selected-chip{background:#f5e9ff;color:#8021b2}
+.picker-row input{accent-color:#9e15f4}
+#loginScreen{background:linear-gradient(165deg,#f3eafa,#faf7fc)}
+.loginbox{border-radius:24px;border:1px solid #eadcf1;box-shadow:0 22px 65px rgba(76,28,89,.12)}
+.loginbrand{background:linear-gradient(115deg,#9718ef,#ce2cba 74%,#f99e4e);padding:27px 20px}
+.loginbrand h2{font-family:'Barlow Condensed','Pretendard Variable',sans-serif;font-size:31px;letter-spacing:.025em}
+.logincontent{padding:24px}
+#accountBar{color:#7f7486}
+@media(min-width:800px){.hero{border-radius:24px}.tabbar{border-radius:18px}}
 </style></head><body>
 <div id="loginScreen"><div class="loginbox"><div class="loginbrand"><h2>TEAM PINHIGH</h2><div>운영진 전용 로그인</div></div><div class="logincontent"><div class="field"><label>이메일 아이디</label><input type="email" id="loginEmail" autocomplete="username" placeholder="운영진 이메일"></div><div class="field"><label>비밀번호</label><input type="password" id="loginPassword" autocomplete="current-password" placeholder="비밀번호"></div><button class="gradient widebtn" onclick="signIn()">로그인</button><div class="notice" id="loginHelp">서버 연결 전에는 실제 계정 로그인이 활성화되지 않습니다. 아래의 체험하기로 기능을 시험할 수 있습니다.</div><button class="btn widebtn" onclick="demoSignIn()">로그인 없이 체험하기 (이 기기에만 저장)</button></div></div></div>
 <main class="wrap"><div id="accountBar"><span id="accountLabel">체험 모드</span><button class="btn sm" onclick="signOut()">로그아웃</button></div><header class="hero"><div><div class="eyebrow">PINHIGH · CLUB OPERATIONS</div><h1>핀하이 운영관리</h1><p>회원부터 정모·방 배정까지, 한곳에서 간편하게</p></div></header>
